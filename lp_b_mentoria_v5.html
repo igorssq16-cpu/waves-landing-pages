@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>WAVES — Mentoria de Produção Musical e DJ</title>
+<meta name="description" content="Aulas individuais ou em dupla, presencial em Criciúma ou online de qualquer lugar do Brasil. Mentoria 1 a 1 com produtor profissional." />
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1745629623514914');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'LP_Mentoria_v2', content_category: 'mentoria'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* paleta marca */
+  --bg:#0e0606;
+  --bg-2:#1a0c0c;
+  --bg-3:#290e0e;
+  --ink:#f1e7e6;
+  --ink-dim:#b8a3a1;
+  --ink-mute:#6b5453;
+  --brand:#d91917;
+  --brand-2:#9f1c16;
+  --brand-deep:#691813;
+  --brand-soft:rgba(217,25,23,.18);
+  --line:rgba(241,231,230,.08);
+  --line-strong:rgba(241,231,230,.16);
+  --display:'Bricolage Grotesque', system-ui, sans-serif;
+  --body:'DM Sans', system-ui, sans-serif;
+  --mono:'DM Mono', ui-monospace, monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* radial glow background */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 900px 700px at 85% 0%, rgba(217,25,23,.22), transparent 60%),
+    radial-gradient(ellipse 700px 600px at 5% 100%, rgba(105,24,19,.25), transparent 60%);
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity:.05;mix-blend-mode:overlay;
+}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand-2));z-index:200;transition:width .1s;width:0}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+.reveal.d4{transition-delay:.4s}
+
+/* NAV */
+nav{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,6,6,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:50}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-0.04em}
+.logo span{color:var(--brand)}
+.nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:#fff;text-decoration:none;background:var(--brand);padding:11px 22px;border-radius:999px;transition:transform .2s, background .25s, box-shadow .3s;display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.nav-cta:hover{transform:translateY(-2px);background:var(--brand-2);box-shadow:0 8px 20px -6px rgba(217,25,23,.5)}
+.nav-cta .wa-icon{width:14px;height:14px;fill:currentColor}
+
+/* ========== HERO ========== */
+.hero{padding:80px 0 90px;position:relative;text-align:center;overflow:hidden}
+.hero-eq{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:0.18;
+  mask-image:radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.4) 60%, transparent 90%);
+  -webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0.4) 60%, transparent 90%);
+}
+.hero-eq svg{width:100%;height:100%;display:block}
+.hero-mark{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:14px;margin-bottom:32px}
+.hero-mark::before,.hero-mark::after{content:'';width:40px;height:1px;background:var(--brand)}
+
+h1{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(50px,8vw,120px);
+  line-height:0.92;
+  letter-spacing:-0.045em;
+  margin:0 auto 36px;
+  max-width:1100px;
+}
+h1 .pop{
+  background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;font-weight:700;
+}
+h1 .strike{
+  text-decoration:line-through;
+  text-decoration-color:var(--brand);
+  text-decoration-thickness:6px;
+  text-decoration-skip-ink:none;
+  color:var(--ink-mute);
+  font-weight:300;
+}
+
+.hero-sub{font-size:clamp(17px,2vw,21px);color:var(--ink-dim);max-width:680px;margin:0 auto 56px;line-height:1.5}
+
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:80px}
+.cta-big{
+  background:var(--brand);
+  color:#fff;
+  padding:22px 44px;
+  text-decoration:none;
+  font-family:var(--display);
+  font-size:19px;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  transition:transform .25s, box-shadow .3s, background .25s;
+  position:relative;
+}
+.cta-big:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 22px 44px -10px rgba(217,25,23,.55);background:var(--brand-2)}
+.cta-big .wa-icon{width:22px;height:22px;fill:#fff}
+.cta-big .arrow{transition:transform .3s;display:inline-block}
+.cta-big:hover .arrow{transform:translateX(6px)}
+.cta-small{font-family:var(--mono);font-size:12px;color:var(--ink-mute);letter-spacing:0.05em}
+.cta-small strong{color:var(--ink-dim);font-weight:500}
+
+/* hero stats */
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:640px){.hero-stats{grid-template-columns:1fr}.hero-stat{border-bottom:1px solid var(--line)}.hero-stat:last-child{border-bottom:none}}
+.hero-stat{padding:34px 0;text-align:center;border-right:1px solid var(--line)}
+.hero-stat:last-child{border-right:none}
+.hero-stat-num{font-family:var(--display);font-size:52px;font-weight:700;line-height:1;letter-spacing:-0.035em}
+.hero-stat-num .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-stat-lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:12px}
+
+/* SECTIONS */
+.section{padding:120px 0;position:relative}
+@media(max-width:640px){.section{padding:80px 0}}
+
+.section-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brand);margin-bottom:24px;display:inline-flex;align-items:center;gap:12px;font-weight:500}
+.section-eyebrow::before{content:'◆';color:var(--brand);font-size:8px}
+
+.section-title{font-family:var(--display);font-weight:600;font-size:clamp(38px,5.5vw,68px);line-height:0.98;letter-spacing:-0.035em;margin-bottom:24px;max-width:900px}
+.section-title .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.section-sub{font-size:18px;color:var(--ink-dim);max-width:680px;line-height:1.55;margin-bottom:60px}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:60px}
+@media(max-width:900px){.compare{grid-template-columns:1fr}}
+.compare-col{padding:48px 36px;border-radius:14px;position:relative;overflow:hidden}
+.compare-col.bad{background:var(--bg-2);border:1px solid var(--line)}
+.compare-col.good{
+  background:linear-gradient(135deg,rgba(217,25,23,.16) 0%,rgba(159,28,22,.06) 100%);
+  border:1px solid var(--brand);
+  box-shadow:0 0 60px -20px rgba(217,25,23,.4);
+}
+.compare-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:22px;display:block;font-weight:500}
+.compare-col.bad .compare-tag{color:var(--ink-mute)}
+.compare-col.good .compare-tag{color:var(--brand)}
+.compare-col h3{font-family:var(--display);font-size:28px;font-weight:600;margin-bottom:30px;letter-spacing:-0.025em;line-height:1.05}
+.compare-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.compare-list li{padding-left:32px;position:relative;font-size:15.5px;line-height:1.5;color:var(--ink-dim)}
+.compare-col.bad .compare-list li::before{content:'×';position:absolute;left:0;top:-2px;color:var(--ink-mute);font-size:22px;font-weight:300}
+.compare-col.good .compare-list li{color:var(--ink)}
+.compare-col.good .compare-list li::before{content:'→';position:absolute;left:0;top:0;color:var(--brand);font-weight:700;font-size:18px}
+
+/* FORMATS */
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:900px){.formats{grid-template-columns:1fr}}
+.format-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:48px 40px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .4s ease, border-color .3s, box-shadow .3s;
+}
+.format-card:hover{transform:translateY(-6px);border-color:var(--brand);box-shadow:0 24px 50px -16px rgba(217,25,23,.3)}
+.format-card::before{
+  content:'';position:absolute;top:0;right:0;width:200px;height:200px;
+  background:radial-gradient(circle,rgba(217,25,23,.24),transparent 70%);
+  pointer-events:none;transition:transform .5s ease;
+}
+.format-card:hover::before{transform:translate(20px,-20px) scale(1.2)}
+.format-card .num{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--brand);margin-bottom:26px;display:block;position:relative;z-index:2;font-weight:500}
+.format-card h3{font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-0.035em;line-height:1;margin-bottom:10px;position:relative;z-index:2}
+.format-card .sub{font-family:var(--mono);font-size:13px;color:var(--ink-dim);margin-bottom:34px;position:relative;z-index:2;letter-spacing:0.02em}
+.format-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:34px;position:relative;z-index:2}
+.format-features li{padding-left:30px;position:relative;font-size:15px;color:var(--ink);line-height:1.5}
+.format-features li::before{content:'';position:absolute;left:0;top:9px;width:16px;height:2px;background:var(--brand)}
+.format-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);text-decoration:none;border:1px solid var(--brand);padding:14px 26px;border-radius:999px;transition:all .25s;position:relative;z-index:2;font-weight:500}
+.format-cta:hover{background:var(--brand);color:#fff;transform:translateX(4px)}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:140px 1fr;gap:32px;padding:36px 0;border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border-bottom:none}
+@media(max-width:640px){.step{grid-template-columns:1fr;gap:14px}}
+.step-num{font-family:var(--display);font-size:84px;font-weight:300;line-height:0.85;letter-spacing:-0.04em;color:var(--brand);font-style:italic}
+.step h3{font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-0.025em;margin-bottom:10px}
+.step p{color:var(--ink-dim);font-size:16px;line-height:1.55;max-width:640px}
+
+/* WHY WAVES (substitui prova social) */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+
+/* ALUNOS ROW */
+.alunos-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.alunos-row{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:520px){.alunos-row{grid-template-columns:1fr;gap:16px}}
+.aluno-card{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  aspect-ratio:1/1;
+  margin:0;
+  transition:transform .4s ease, border-color .3s, box-shadow .3s;
+  background:var(--bg-2);
+}
+.aluno-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  border-color:var(--brand);
+  box-shadow:0 16px 36px -12px rgba(217,25,23,.4);
+}
+.aluno-card picture,.aluno-card img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* COMMUNITY / CONFRA BLOCK */
+.community-section{margin-top:24px}
+.confra-block{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  aspect-ratio:16/9;
+  background:var(--bg-2);
+  box-shadow:0 30px 70px -25px rgba(0,0,0,.7);
+}
+@media(max-width:640px){.confra-block{aspect-ratio:4/5}}
+.confra-block picture,.confra-block img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.confra-block-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:56px;
+  z-index:2;
+  background:linear-gradient(90deg, rgba(14,6,6,.95) 0%, rgba(14,6,6,.7) 45%, rgba(14,6,6,.1) 100%);
+}
+@media(max-width:640px){
+  .confra-block-overlay{
+    padding:28px;
+    background:linear-gradient(0deg, rgba(14,6,6,.95) 0%, rgba(14,6,6,.7) 55%, rgba(14,6,6,.1) 100%);
+  }
+}
+.confra-block-tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--brand);margin-bottom:18px;display:block;font-weight:500;
+}
+.confra-block-overlay h3{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(32px,5vw,56px);
+  line-height:0.98;letter-spacing:-0.03em;
+  margin-bottom:18px;color:var(--ink);max-width:540px;
+}
+.confra-block-overlay h3 .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.confra-block-overlay p{font-size:16px;line-height:1.55;color:var(--ink-dim);max-width:520px}
+.confra-block-overlay p strong{color:var(--ink);font-weight:600}
+@media(max-width:640px){
+  .confra-block-overlay p{font-size:14px;line-height:1.5}
+}
+.why-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:44px 36px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s, border-color .3s;
+}
+.why-card::before{
+  content:'';position:absolute;top:0;left:0;width:60px;height:3px;background:var(--brand);transition:width .4s ease;
+}
+.why-card:hover{transform:translateY(-4px);border-color:var(--brand)}
+.why-card:hover::before{width:100%}
+.why-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+  font-family:var(--display);font-weight:700;color:#fff;font-size:20px;font-style:italic;
+}
+.why-card h3{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px}
+.why-card p{color:var(--ink-dim);font-size:15.5px;line-height:1.6}
+.why-card p strong{color:var(--ink);font-weight:600}
+
+/* FAQ */
+.faq{max-width:840px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line);padding:26px 0;cursor:pointer}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.015em;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:color .25s}
+.faq-q::after{content:'';width:14px;height:14px;border-right:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(45deg);transition:transform .3s, margin .3s;flex-shrink:0;margin-bottom:6px}
+.faq-item.open .faq-q{color:var(--brand)}
+.faq-item.open .faq-q::after{transform:rotate(-135deg);margin-bottom:0;margin-top:6px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease, margin .3s;color:var(--ink-dim);font-size:15.5px;line-height:1.65}
+.faq-item.open .faq-a{max-height:400px;margin-top:18px}
+
+/* FINAL */
+.final{padding:140px 0 120px;text-align:center;position:relative;border-top:1px solid var(--line);overflow:hidden}
+.final::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center, rgba(217,25,23,.18), transparent 65%);
+  pointer-events:none;
+}
+.final-title{font-family:var(--display);font-weight:600;font-size:clamp(42px,7vw,88px);line-height:0.95;letter-spacing:-0.035em;margin-bottom:24px;position:relative;z-index:2}
+.final-title .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.final-sub{font-size:18px;color:var(--ink-dim);max-width:620px;margin:0 auto 48px;position:relative;z-index:2}
+.final .cta-big{position:relative;z-index:2}
+
+/* floating WhatsApp */
+.float-wa{
+  position:fixed;
+  bottom:24px;right:24px;
+  z-index:100;
+  background:var(--brand);
+  width:64px;height:64px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  transition:transform .25s, background .25s;
+  box-shadow:0 8px 24px -4px rgba(217,25,23,.55);
+  animation:pulseRing 2.4s ease-in-out infinite;
+}
+.float-wa:hover{transform:scale(1.1);background:var(--brand-2)}
+.float-wa svg{width:32px;height:32px;fill:#fff}
+@keyframes pulseRing{0%,100%{box-shadow:0 0 0 0 rgba(217,25,23,.5), 0 8px 24px -4px rgba(217,25,23,.55)}50%{box-shadow:0 0 0 18px rgba(217,25,23,0), 0 8px 24px -4px rgba(217,25,23,.55)}}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-align:center;background:var(--bg-2)}
+footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
+
+/* ============================================
+   MOBILE-FIRST OVERRIDES — fix v3
+   ============================================ */
+@media(max-width:768px){
+  /* navegação compacta */
+  nav{padding:14px 0}
+  .logo{font-size:22px}
+  .nav-cta{font-size:10px;padding:8px 14px;letter-spacing:0.04em;gap:6px}
+  .nav-cta .wa-icon{width:12px;height:12px}
+
+  /* HERO compacto */
+  .hero{padding:48px 0 56px}
+  .hero-mark{margin-bottom:20px;font-size:9px;letter-spacing:0.12em}
+  .hero-mark::before,.hero-mark::after{width:24px}
+  h1{font-size:48px !important;line-height:0.95;letter-spacing:-0.035em;margin-bottom:24px;word-wrap:break-word;overflow-wrap:break-word}
+  h1 .strike{text-decoration-thickness:4px}
+  .hero-sub{font-size:16px;line-height:1.5;margin:0 auto 36px;padding:0 4px}
+  .hero-cta-wrap{margin-bottom:48px;gap:14px}
+  .cta-big{padding:18px 28px;font-size:16px;gap:10px}
+  .cta-big .wa-icon{width:18px;height:18px}
+  .cta-small{font-size:11px}
+
+  /* hero stats */
+  .hero-stat{padding:26px 0}
+  .hero-stat-num{font-size:38px}
+  .hero-stat-lbl{font-size:9px;margin-top:8px;letter-spacing:0.1em}
+
+  /* sections */
+  .section{padding:60px 0}
+  .section-title{font-size:34px !important;line-height:1.0;margin-bottom:18px}
+  .section-eyebrow{font-size:10px;margin-bottom:14px}
+  .section-sub{font-size:15.5px;margin-bottom:40px}
+
+  /* compare */
+  .compare{gap:16px;margin-top:36px}
+  .compare-col{padding:32px 24px;border-radius:10px}
+  .compare-col h3{font-size:22px;margin-bottom:22px}
+  .compare-list{gap:12px}
+  .compare-list li{font-size:14.5px;padding-left:28px}
+
+  /* formats */
+  .formats{gap:16px}
+  .format-card{padding:32px 24px;border-radius:12px}
+  .format-card h3{font-size:30px}
+  .format-card .sub{font-size:12px;margin-bottom:24px}
+  .format-features{gap:12px;margin-bottom:24px}
+  .format-features li{font-size:14.5px;padding-left:26px}
+  .format-cta{font-size:10px;padding:12px 22px}
+
+  /* steps */
+  .step{padding:28px 0;gap:6px}
+  .step-num{font-size:60px}
+  .step h3{font-size:22px;margin-bottom:6px}
+  .step p{font-size:15px}
+
+  /* why */
+  .why-grid{gap:16px}
+  .why-card{padding:32px 24px;border-radius:10px}
+  .why-icon{width:42px;height:42px;font-size:17px;margin-bottom:18px}
+  .why-card h3{font-size:20px;margin-bottom:10px}
+  .why-card p{font-size:14.5px}
+
+  /* FAQ */
+  .faq-q{font-size:17px;gap:14px}
+  .faq-q::after{width:11px;height:11px}
+  .faq-item{padding:20px 0}
+
+  /* final */
+  .final{padding:72px 0 60px}
+  .final-title{font-size:42px;margin-bottom:18px}
+  .final-sub{font-size:15.5px;margin-bottom:32px}
+
+  /* botão flutuante: menor e mais discreto em mobile */
+  .float-wa{width:54px;height:54px;bottom:18px;right:18px}
+  .float-wa svg{width:26px;height:26px}
+}
+
+/* extra-small */
+@media(max-width:380px){
+  .wrap{padding:0 16px}
+  h1{font-size:42px !important}
+  .section-title{font-size:30px !important}
+  .nav-cta{font-size:9px;padding:7px 11px}
+  .hero-stat-num{font-size:34px}
+  .format-card h3{font-size:26px}
+  .step-num{font-size:54px}
+}
+
+/* respeitar usuários com motion reduzido */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo">waves<span>.</span></div>
+    <a href="#" class="nav-cta" onclick="abrirWA('nav');return false;">
+      Falar com a Waves
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- equalizer ambient background -->
+  <div class="hero-eq" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="eq-bar" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#d91917" stop-opacity="0.0"/>
+          <stop offset="40%" stop-color="#d91917" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#ff3a38" stop-opacity="0.9"/>
+        </linearGradient>
+      </defs>
+      <g>
+        <!-- 32 barras de equalizador, animadas com tempos e amplitudes diferentes -->
+        <rect x="20"   y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="80;240;120;320;180;100;260;140;300;180" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="470;310;430;230;370;450;290;410;250;370" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="55"   y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="120;280;160;200;320;100;240;180;360;140" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="430;270;390;350;230;450;310;370;190;410" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="90"   y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;100;280;200;160;340;120;240;180;300" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="370;450;270;350;390;210;430;310;370;250" dur="1.4s" repeatCount="indefinite"/></rect>
+        <rect x="125"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="240;160;300;120;380;200;140;280;220;160" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="310;390;250;430;170;350;410;270;330;390" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="160"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="140;320;200;100;260;180;360;120;240;200" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="410;230;350;450;290;370;190;430;310;350" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="195"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="280;140;220;380;160;240;120;320;180;260" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="270;410;330;170;390;310;430;230;370;290" dur="0.9s" repeatCount="indefinite"/></rect>
+        <rect x="230"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;260;120;340;200;160;300;140;240;200" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="370;290;430;210;350;390;250;410;310;350" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="265"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="320;100;240;180;380;140;220;280;160;300" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="230;450;310;370;170;410;330;270;390;250" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="300"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="200;140;320;180;240;100;360;200;160;280" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="350;410;230;370;310;450;190;350;390;270" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="335"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="260;180;120;300;220;160;340;200;120;240" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="290;370;430;250;330;390;210;350;430;310" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="370"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="140;240;320;100;260;380;180;120;200;300" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="410;310;230;450;290;170;370;430;350;250" dur="1.4s" repeatCount="indefinite"/></rect>
+        <rect x="405"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="220;160;280;200;360;120;240;180;100;320" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="330;390;270;350;190;430;310;370;450;230" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="440"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;320;240;120;200;160;300;180;260;140" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="370;230;310;430;350;390;250;370;290;410" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="475"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="300;140;200;380;160;240;120;280;180;220" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="250;410;350;170;390;310;430;270;370;330" dur="0.9s" repeatCount="indefinite"/></rect>
+        <rect x="510"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="160;280;200;100;340;220;160;240;120;360" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="390;270;350;450;210;330;390;310;430;190" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="545"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="240;180;320;120;200;260;380;160;220;300" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="310;370;230;430;350;290;170;390;330;250" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="580"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="120;220;180;300;160;240;120;200;360;140" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="430;330;370;250;390;310;430;350;190;410" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="615"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="320;180;240;100;280;200;320;120;180;240" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="230;370;310;450;270;350;230;430;370;310" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="650"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="200;160;380;220;120;260;180;340;160;200" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="350;390;170;330;430;290;370;210;390;350" dur="1.4s" repeatCount="indefinite"/></rect>
+        <rect x="685"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="160;240;120;200;280;180;320;140;200;300" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="390;310;430;350;270;370;230;410;350;250" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="720"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="240;180;100;320;160;220;180;240;360;140" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="310;370;450;230;390;330;370;310;190;410" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="755"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;320;220;160;280;200;120;240;180;260" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="370;230;330;390;270;350;430;310;370;290" dur="0.9s" repeatCount="indefinite"/></rect>
+        <rect x="790"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="300;140;240;180;100;360;200;160;280;220" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="250;410;310;370;450;190;350;390;270;330" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="825"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="220;180;300;120;200;160;340;200;120;240" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="330;370;250;430;350;390;210;350;430;310" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="860"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="160;260;320;180;240;100;220;380;140;180" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="390;290;230;370;310;450;330;170;410;370" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="895"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="280;160;220;120;200;240;180;320;160;260" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="270;390;330;430;350;310;370;230;390;290" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="930"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;240;320;160;100;200;280;160;360;220" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="370;310;230;390;450;350;270;390;190;330" dur="1.4s" repeatCount="indefinite"/></rect>
+        <rect x="965"  y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="220;180;120;300;160;380;240;120;200;160" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;370;430;250;390;170;310;430;350;390" dur="1.2s" repeatCount="indefinite"/></rect>
+        <rect x="1000" y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="160;240;200;320;120;180;260;200;360;140" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="390;310;350;230;430;370;290;350;190;410" dur="0.9s" repeatCount="indefinite"/></rect>
+        <rect x="1035" y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="300;140;220;180;240;120;280;160;200;320" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="250;410;330;370;310;430;270;390;350;230" dur="1.3s" repeatCount="indefinite"/></rect>
+        <rect x="1070" y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="180;320;160;200;280;120;240;180;100;220" dur="1.0s" repeatCount="indefinite"/><animate attributeName="y" values="370;230;390;350;270;430;310;370;450;330" dur="1.0s" repeatCount="indefinite"/></rect>
+        <rect x="1105" y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="240;160;120;360;200;160;280;220;160;180" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="310;390;430;190;350;390;270;330;390;370" dur="1.1s" repeatCount="indefinite"/></rect>
+        <rect x="1140" y="300" width="20" height="250" fill="url(#eq-bar)"><animate attributeName="height" values="200;280;160;240;320;180;100;200;140;280" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="350;270;390;310;230;370;450;350;410;270" dur="1.2s" repeatCount="indefinite"/></rect>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap" style="position:relative;z-index:3">
+    <div class="hero-mark reveal">Mentoria 1 a 1 · Presencial em Criciúma ou Online</div>
+    <h1 class="reveal d1">
+      Pare de <span class="strike">tentar sozinho.</span><br>
+      Comece com <span class="pop">mentor.</span>
+    </h1>
+    <p class="hero-sub reveal d2">Aulas individuais ou em dupla com produtor profissional. No estúdio em Criciúma ou online de qualquer lugar do Brasil. O caminho mais curto entre onde você está hoje e a sua música rodando.</p>
+    <div class="hero-cta-wrap reveal d3">
+      <a href="#" class="cta-big" onclick="abrirWA('hero');return false;">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+        Falar com a Waves agora
+        <span class="arrow">→</span>
+      </a>
+      <p class="cta-small"><strong>Resposta em minutos.</strong> Conversa sem compromisso.</p>
+    </div>
+
+    <div class="hero-stats reveal d4">
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="pop">24</span></div>
+        <div class="hero-stat-lbl">Aulas no programa</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="pop">6</span></div>
+        <div class="hero-stat-lbl">Países com alunos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="pop">1:1</span></div>
+        <div class="hero-stat-lbl">Mentoria direta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">A diferença real</div>
+    <h2 class="section-title reveal d1">Curso online qualquer um faz.<br>Mentoria <span class="pop">muda</span> o jogo.</h2>
+    <p class="section-sub reveal d2">Quem aprende sozinho leva cinco anos para descobrir o que um mentor corrige em cinco minutos. A diferença entre os dois caminhos não é sutil:</p>
+
+    <div class="compare">
+      <div class="compare-col bad reveal">
+        <span class="compare-tag">Aprendendo sozinho</span>
+        <h3>YouTube, fórum,<br>tentativa e erro.</h3>
+        <ul class="compare-list">
+          <li>Conteúdo solto, sem sequência lógica</li>
+          <li>Ninguém escuta sua música e diz o que está errado</li>
+          <li>Você repete os mesmos erros sem perceber</li>
+          <li>Pode levar anos para sair do nível básico</li>
+          <li>Sem rede, sem indicação, sem comunidade</li>
+          <li>Lançamento que nunca chega</li>
+        </ul>
+      </div>
+      <div class="compare-col good reveal d1">
+        <span class="compare-tag">Mentoria Waves</span>
+        <h3>Mentor profissional,<br>plano sob medida.</h3>
+        <ul class="compare-list">
+          <li>Trilha estruturada do zero ao master final</li>
+          <li>Feedback direto e específico em cada aula</li>
+          <li>Correção de vícios técnicos antes deles travarem você</li>
+          <li>Resultado em meses, não em anos</li>
+          <li>Rede Waves: alunos, parcerias, indicações reais</li>
+          <li>Sua música pronta para lançamento ao final</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Escolha o formato</div>
+    <h2 class="section-title reveal d1">Dois caminhos.<br>Um <span class="pop">objetivo.</span></h2>
+
+    <div class="formats">
+      <div class="format-card reveal">
+        <span class="num">↳ Formato 01</span>
+        <h3>Individual</h3>
+        <p class="sub">24 aulas de 1h · Presencial em Criciúma ou online</p>
+        <ul class="format-features">
+          <li>Mentoria 100% personalizada</li>
+          <li>Ritmo definido por você</li>
+          <li>Foco total no seu estilo musical</li>
+          <li>Plano de aula adaptado mês a mês</li>
+          <li>Acesso direto ao mentor entre as aulas</li>
+        </ul>
+        <a href="#" class="format-cta" onclick="abrirWA('individual');return false;">Quero o individual →</a>
+      </div>
+      <div class="format-card reveal d1">
+        <span class="num">↳ Formato 02</span>
+        <h3>Dupla</h3>
+        <p class="sub">24 aulas de 1h · Presencial em Criciúma ou online</p>
+        <ul class="format-features">
+          <li>Mesmo programa, com colega de jornada</li>
+          <li>Aprendizado mais dinâmico e provocativo</li>
+          <li>Investimento dividido</li>
+          <li>Trocas e parcerias musicais reais</li>
+          <li>Ideal para amigos com objetivos próximos</li>
+        </ul>
+        <a href="#" class="format-cta" onclick="abrirWA('dupla');return false;">Quero a dupla →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Como começa</div>
+    <h2 class="section-title reveal d1">Quatro passos<br>até a <span class="pop">primeira aula.</span></h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Conversa inicial</h3>
+          <p>Você chama no WhatsApp, conta seu momento atual e seu objetivo. O time da Waves entende onde você está e onde quer chegar — sem pressão de venda.</p>
+        </div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Recomendação de formato</h3>
+          <p>A gente indica individual ou dupla, presencial ou online, baseado na sua disponibilidade, localização e estilo de aprendizado. Sem encaixar você no que sobrou.</p>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Plano de mentoria personalizado</h3>
+          <p>Antes da primeira aula, montamos um plano com os marcos das 24 sessões — adaptado ao seu nível, ao seu estilo musical e aos seus objetivos de carreira.</p>
+        </div>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Sua primeira sessão</h3>
+          <p>Começa a mentoria com mentor profissional, com objetivos claros e plano definido. Em poucas semanas, a diferença na sua produção já é audível.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALUNOS + COMUNIDADE (substitui Why Waves) -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Quem já passou por aqui</div>
+    <h2 class="section-title reveal d1">Alunos reais.<br><span class="pop">Certificados</span> nas mãos.</h2>
+    <p class="section-sub reveal d2">Não é stock, não é catálogo. São pessoas que conheceram a Waves, fizeram a mentoria e saíram com certificado, técnica e — principalmente — uma rede.</p>
+
+    <div class="alunos-row">
+      <figure class="aluno-card reveal">
+        <picture>
+          <source srcset="img/aluno-04-deley-md.webp" type="image/webp">
+          <img src="img/aluno-04-deley.jpg" alt="Aluno formado pela Waves com certificado" loading="lazy">
+        </picture>
+      </figure>
+      <figure class="aluno-card reveal d1">
+        <picture>
+          <source srcset="img/aluno-02-kamila-carol-md.webp" type="image/webp">
+          <img src="img/aluno-02-kamila-carol.jpg" alt="Alunas formadas no estúdio Waves Criciúma" loading="lazy">
+        </picture>
+      </figure>
+      <figure class="aluno-card reveal d2">
+        <picture>
+          <source srcset="img/aluno-03-caua-md.webp" type="image/webp">
+          <img src="img/aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
+        </picture>
+      </figure>
+      <figure class="aluno-card reveal d3">
+        <picture>
+          <source srcset="img/aluno-05-bruno-md.webp" type="image/webp">
+          <img src="img/aluno-05-bruno.jpg" alt="Aluno formado em produção musical" loading="lazy">
+        </picture>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDADE (a foto de confra é o herói dessa seção) -->
+<section class="section community-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="confra-block reveal">
+      <picture>
+        <source srcset="img/confra-01-lg.webp" type="image/webp">
+        <img src="img/confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
+      </picture>
+      <div class="confra-block-overlay">
+        <span class="confra-block-tag">1ª Confraternização · Criciúma</span>
+        <h3>Você não vira DJ <span class="pop">sozinho</span>.</h3>
+        <p>A Waves não termina quando o curso acaba. A rede de alunos formados continua junta — toca em evento de outro aluno, fecha parceria, vira artista convidado. É comunidade real. É <strong>profissão</strong> sendo construída em rede.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Antes de chamar</div>
+    <h2 class="section-title reveal d1">Perguntas <span class="pop">frequentes.</span></h2>
+    <div class="faq reveal d2" style="margin-top:60px">
+      <div class="faq-item">
+        <div class="faq-q">Preciso ter experiência prévia?</div>
+        <div class="faq-a">Não. A mentoria começa exatamente do seu nível atual — seja zero absoluto ou produtor experiente buscando refinamento. O plano é desenhado depois da conversa inicial, considerando o seu ponto de partida real.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como funciona o formato online?</div>
+        <div class="faq-a">Aulas ao vivo em videochamada, com tela compartilhada, projeto aberto e correção em tempo real. Você fica em casa, com o seu próprio setup, e o mentor te guia em cada decisão técnica — exatamente como no presencial.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Onde fica o estúdio presencial?</div>
+        <div class="faq-a">Em Criciúma, Santa Catarina. Estúdio próprio com equipamento profissional disponível durante as aulas — você não precisa levar nada além de você mesmo e da vontade de produzir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual é o valor da mentoria?</div>
+        <div class="faq-a">O valor exato e as condições de pagamento são apresentados pelo consultor durante a conversa inicial, junto com a recomendação do melhor formato para o seu caso. Trabalhamos com parcelamento facilitado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não me adaptar ao formato escolhido?</div>
+        <div class="faq-a">Os primeiros encontros servem também para validar o ajuste. Se sentir que o formato escolhido (individual / dupla / presencial / online) não combina com você, conversamos para ajustar o plano e garantir que a mentoria entregue o que você precisa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto tempo dura o programa?</div>
+        <div class="faq-a">São 24 aulas de 1 hora, normalmente distribuídas em 4 a 6 meses, dependendo do seu ritmo. A frequência (semanal, quinzenal, intensiva) é definida com o mentor logo no início.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="final-title reveal">Sua música merece<br>mais que <span class="pop">tentativa.</span></h2>
+    <p class="final-sub reveal d1">Cinco minutos no WhatsApp podem mudar o caminho da sua carreira musical. Sem compromisso, sem pressão.</p>
+    <a href="#" class="cta-big reveal d2" onclick="abrirWA('final');return false;">
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+      Conversar com a Waves
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© WAVES INTERNACIONAL · <span class="pop">ESCOLA DE PRODUÇÃO MUSICAL E DJ</span> · CRICIÚMA / SC</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="#" class="float-wa" onclick="abrirWA('flutuante');return false;" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+</a>
+
+<script>
+// FAQ
+document.querySelectorAll('.faq-item').forEach(i => i.addEventListener('click', () => i.classList.toggle('open')));
+
+// Reveal on scroll com fallback
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+  setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 4000);
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+// Scroll progress
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  prog.style.width = p + '%';
+}, { passive: true });
+
+// WhatsApp config
+const WHATSAPP = '554898083842';
+
+const UTM = (() => {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    source: p.get('utm_source') || 'direct',
+    campaign: p.get('utm_campaign') || 'na',
+    content: p.get('utm_content') || 'na'
+  };
+})();
+
+const MSGS = {
+  nav:        'Olá! Cheguei pelo site da Waves e quero saber mais sobre as mentorias.',
+  hero:       'Olá! Vim do site e quero conhecer a mentoria de produção musical da Waves.',
+  individual: 'Olá! Quero saber mais sobre a MENTORIA INDIVIDUAL de produção musical.',
+  dupla:      'Olá! Quero saber mais sobre a MENTORIA EM DUPLA de produção musical.',
+  final:      'Olá! Quero conversar com a Waves sobre a mentoria.',
+  flutuante:  'Olá! Estou no site da Waves e quero falar com o time.'
+};
+
+function abrirWA(origem){
+  if(typeof fbq === 'function'){
+    fbq('track', 'Lead', {
+      content_name: 'LP_Mentoria_v2',
+      content_category: 'mentoria',
+      origin: origem
+    });
+    fbq('trackCustom', 'ClickWhatsApp', {origem: origem, ...UTM});
+  }
+  const baseMsg = MSGS[origem] || MSGS.hero;
+  const fullMsg = `${baseMsg}\n\n(Origem: ${UTM.campaign} / ${UTM.content})`;
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(fullMsg)}`;
+  window.open(url, '_blank');
+}
+</script>
+</body>
+</html>

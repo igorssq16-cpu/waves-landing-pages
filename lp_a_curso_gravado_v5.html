@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>WAVES — Curso de Produção Musical</title>
+<meta name="description" content="Curso completo de produção musical. Método estruturado, acesso vitalício, escola com alunos em 6 países." />
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1745629623514914');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'LP_Curso_Gravado_v2', content_category: 'curso_gravado'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* paleta marca */
+  --bg:#0e0606;
+  --bg-2:#1a0c0c;
+  --bg-3:#290e0e;
+  --ink:#f1e7e6;
+  --ink-dim:#a59290;
+  --ink-mute:#6b5453;
+  --brand:#d91917;
+  --brand-deep:#9f1c16;
+  --brand-dark:#691813;
+  --brand-soft:rgba(217,25,23,.14);
+  --line:rgba(241,231,230,.08);
+  --line-strong:rgba(241,231,230,.16);
+  --display:'Fraunces', Georgia, serif;
+  --body:'Inter Tight', system-ui, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* grain */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity:.06;pointer-events:none;z-index:1;mix-blend-mode:overlay;
+}
+
+/* scroll progress bar */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--brand);z-index:200;transition:width .1s;width:0}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+.reveal.d4{transition-delay:.4s}
+
+/* ========== NAV ========== */
+nav{padding:24px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,6,6,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:50}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.03em;font-style:italic}
+.logo span{color:var(--brand)}
+.nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--line-strong);padding:11px 20px;border-radius:999px;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.nav-cta:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-1px)}
+.nav-cta .arrow{transition:transform .25s}
+.nav-cta:hover .arrow{transform:translate(3px,-1px)}
+
+/* ========== HERO ========== */
+.hero{padding:80px 0 100px;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;
+  top:-200px;right:-300px;width:800px;height:800px;
+  background:radial-gradient(circle, var(--brand-soft), transparent 65%);
+  pointer-events:none;z-index:0;
+  animation:floatGlow 14s ease-in-out infinite;
+}
+@keyframes floatGlow{
+  0%,100%{transform:translate(0,0)}
+  50%{transform:translate(-40px,30px)}
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:48px}}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:12px;margin-bottom:32px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--brand)}
+
+h1{
+  font-family:var(--display);
+  font-weight:300;
+  font-size:clamp(42px,6.2vw,80px);
+  line-height:1.0;
+  letter-spacing:-0.03em;
+  margin-bottom:32px;
+}
+h1 em{font-style:italic;font-weight:400;color:var(--brand)}
+h1 strong{font-weight:600;color:var(--ink)}
+
+.hero-sub{font-size:19px;line-height:1.55;color:var(--ink-dim);max-width:560px;margin-bottom:48px}
+
+.hero-meta{display:flex;gap:48px;flex-wrap:wrap;margin-bottom:0;padding-top:40px;border-top:1px solid var(--line)}
+@media(max-width:520px){.hero-meta{gap:28px}}
+.meta-item{display:flex;flex-direction:column;gap:6px}
+.meta-num{font-family:var(--display);font-size:38px;font-weight:400;font-style:italic;color:var(--ink);line-height:1}
+.meta-num em{color:var(--brand);font-style:italic}
+.meta-lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute)}
+
+/* HERO VISUAL (vídeo, foto ou fallback) */
+.hero-visual{
+  position:relative;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  background:linear-gradient(135deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  box-shadow:0 24px 60px -20px rgba(0,0,0,0.6);
+}
+.hero-visual video,.hero-visual img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.hero-visual::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(14,6,6,.85) 100%);
+  pointer-events:none;
+}
+/* fallback art quando não há vídeo */
+.hero-fallback{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 30% 20%, var(--brand-soft), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(159,28,22,.15), transparent 50%),
+    linear-gradient(135deg, var(--bg-3), var(--bg));
+  overflow:hidden;
+}
+.hero-fallback svg{width:100%;height:100%;display:block}
+.hero-fallback::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(241,231,230,.02) 3px, rgba(241,231,230,.02) 4px);
+}
+.hero-tag{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ink);z-index:3;display:flex;justify-content:space-between;align-items:center;
+}
+.hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 12px var(--brand);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ========== STRIP ========== */
+.strip{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:28px 0;
+  overflow:hidden;
+  background:var(--bg-2);
+}
+.strip-inner{display:flex;gap:60px;align-items:center;animation:scroll 38s linear infinite;width:max-content}
+.strip-item{font-family:var(--display);font-style:italic;font-size:20px;color:var(--ink-dim);white-space:nowrap;display:flex;align-items:center;gap:60px;font-weight:400}
+.strip-item::after{content:'◆';color:var(--brand);font-style:normal;font-size:9px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ========== FORM (anchor section) ========== */
+.form-section{padding:100px 0;background:var(--bg-2);border-top:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+@media(max-width:900px){.form-grid{grid-template-columns:1fr;gap:48px}}
+
+.form-side h2{
+  font-family:var(--display);
+  font-weight:300;
+  font-size:clamp(34px,4.5vw,52px);
+  line-height:1.05;
+  letter-spacing:-0.025em;
+  margin-bottom:24px;
+}
+.form-side h2 em{color:var(--brand);font-style:italic}
+.form-side p{font-size:17px;color:var(--ink-dim);line-height:1.55;margin-bottom:32px;max-width:480px}
+
+.form-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.form-features li{padding-left:28px;position:relative;font-size:15px;color:var(--ink);line-height:1.5}
+.form-features li::before{content:'';position:absolute;left:0;top:9px;width:16px;height:2px;background:var(--brand)}
+
+.form-card{
+  background:var(--bg);
+  border:1px solid var(--line-strong);
+  border-radius:10px;
+  padding:44px 36px;
+  position:relative;
+}
+.form-card::before{
+  content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:2px;
+  background:linear-gradient(90deg,var(--brand),transparent 70%);
+  border-radius:10px 10px 0 0;
+}
+.form-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand);margin-bottom:16px;display:block}
+.form-title{font-family:var(--display);font-size:26px;font-weight:500;line-height:1.15;margin-bottom:10px;letter-spacing:-0.01em}
+.form-desc{font-size:14.5px;color:var(--ink-dim);margin-bottom:30px;line-height:1.5}
+
+.field{margin-bottom:22px}
+.field label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-bottom:10px}
+.field input,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid var(--line-strong);
+  padding:8px 0 10px;
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  transition:border-color .25s;
+  border-radius:0;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.field input::placeholder{color:var(--ink-mute)}
+.field input:focus,.field select:focus{outline:none;border-bottom-color:var(--brand)}
+.field select{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23a59290' d='M6 8L0 0h12z'/></svg>");
+  background-repeat:no-repeat;background-position:right 8px center;
+}
+
+.btn{
+  width:100%;
+  background:var(--brand);
+  color:#fff;
+  border:none;
+  padding:18px;
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+  margin-top:14px;
+  border-radius:6px;
+  transition:transform .2s, box-shadow .25s, background .25s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px -10px rgba(217,25,23,.5);background:var(--brand-deep)}
+.btn:active{transform:translateY(0)}
+.btn .arrow{transition:transform .25s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+.form-foot{font-size:12px;color:var(--ink-mute);margin-top:20px;text-align:center;font-family:var(--mono);letter-spacing:0.04em}
+
+/* ========== SECTIONS ========== */
+.section{padding:120px 0;position:relative}
+@media(max-width:640px){.section{padding:80px 0}}
+
+.section-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;display:inline-flex;align-items:center;gap:12px}
+.section-eyebrow::before{content:'';width:28px;height:1px;background:var(--brand)}
+
+.section-title{font-family:var(--display);font-weight:300;font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-0.025em;margin-bottom:24px;max-width:840px}
+.section-title em{font-style:italic;color:var(--brand)}
+.section-title strong{font-weight:600}
+.section-sub{font-size:18px;color:var(--ink-dim);max-width:640px;line-height:1.55;margin-bottom:60px}
+
+/* problem */
+.problem{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.problem{grid-template-columns:1fr;gap:48px}}
+.problem-list{display:flex;flex-direction:column;gap:0}
+.problem-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.problem-item:first-child{padding-top:0}
+.problem-item:last-child{border-bottom:none}
+.problem-num{font-family:var(--display);font-size:36px;font-weight:300;font-style:italic;color:var(--brand);line-height:1}
+.problem-item h3{font-family:var(--display);font-size:22px;font-weight:500;margin-bottom:10px;letter-spacing:-0.01em;line-height:1.2}
+.problem-item p{color:var(--ink-dim);font-size:15.5px;line-height:1.6}
+
+/* method */
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden}
+@media(max-width:900px){.method{grid-template-columns:1fr}}
+.method-step{padding:48px 36px;border-right:1px solid var(--line);position:relative;transition:background .3s}
+.method-step:last-child{border-right:none}
+@media(max-width:900px){.method-step{border-right:none;border-bottom:1px solid var(--line)}.method-step:last-child{border-bottom:none}}
+.method-step:hover{background:var(--bg-2)}
+.method-num{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--brand);margin-bottom:24px;display:block}
+.method-step h3{font-family:var(--display);font-size:24px;font-weight:500;margin-bottom:14px;letter-spacing:-0.01em;line-height:1.15}
+.method-step p{color:var(--ink-dim);font-size:15px;line-height:1.6}
+
+/* INCLUDED */
+.included{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:60px 48px}
+@media(max-width:640px){.included{padding:40px 28px}}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:900px){.included-grid{grid-template-columns:1fr;gap:32px}}
+.included-list{list-style:none;display:flex;flex-direction:column;gap:20px}
+.included-list li{padding-left:32px;position:relative;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.included-list li::before{content:'+';position:absolute;left:0;top:-2px;color:var(--brand);font-weight:400;font-size:20px;font-family:var(--display)}
+.included-list li strong{display:block;margin-bottom:4px;font-weight:600;color:var(--ink)}
+.included-list li span{color:var(--ink-dim);font-size:14px;line-height:1.55}
+
+/* WHY WAVES (substitui prova social) */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+
+/* ALUNOS GRID */
+.alunos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px}
+@media(max-width:900px){.alunos-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:520px){.alunos-grid{grid-template-columns:1fr;gap:16px}}
+.aluno{
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  aspect-ratio:1/1;
+  margin:0;
+  transition:transform .35s ease, border-color .3s;
+  background:var(--bg-2);
+}
+.aluno:hover{transform:translateY(-4px);border-color:var(--brand)}
+.aluno picture,.aluno img{display:block;width:100%;height:100%;object-fit:cover}
+.aluno::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(14,6,6,.92) 100%);
+  pointer-events:none;
+}
+.aluno figcaption{
+  position:absolute;bottom:14px;left:16px;right:16px;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink);z-index:2;
+}
+
+/* CONFRA - bloco grande */
+.confra{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  aspect-ratio:16/9;
+  background:var(--bg-2);
+  margin-top:32px;
+}
+@media(max-width:640px){.confra{aspect-ratio:4/5}}
+.confra picture,.confra img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.confra-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:48px;
+  z-index:2;
+  background:linear-gradient(90deg, rgba(14,6,6,.92) 0%, rgba(14,6,6,.7) 40%, rgba(14,6,6,.2) 100%);
+}
+@media(max-width:640px){
+  .confra-overlay{padding:24px;background:linear-gradient(0deg, rgba(14,6,6,.95) 0%, rgba(14,6,6,.7) 50%, rgba(14,6,6,.2) 100%)}
+}
+.confra-tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--brand);margin-bottom:14px;display:block;
+}
+.confra-overlay h3{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(28px,4.5vw,48px);
+  line-height:1.0;letter-spacing:-0.02em;
+  margin-bottom:14px;color:var(--ink);max-width:520px;
+}
+.confra-overlay h3 em{color:var(--brand);font-style:italic}
+.confra-overlay p{font-size:15.5px;line-height:1.55;color:var(--ink-dim);max-width:480px}
+@media(max-width:640px){
+  .confra-overlay p{font-size:13.5px;line-height:1.5}
+}
+.why-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:44px 38px;
+  position:relative;
+  transition:transform .35s, border-color .3s;
+  overflow:hidden;
+}
+.why-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--brand);transition:height .4s ease;
+}
+.why-card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+.why-card:hover::before{height:100%}
+.why-num{font-family:var(--display);font-size:14px;font-weight:400;font-style:italic;color:var(--brand);margin-bottom:18px;display:block;letter-spacing:0.05em}
+.why-card h3{font-family:var(--display);font-size:24px;font-weight:500;letter-spacing:-0.015em;line-height:1.2;margin-bottom:14px}
+.why-card p{color:var(--ink-dim);font-size:15.5px;line-height:1.6}
+
+/* FAQ */
+.faq-list{max-width:840px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line);padding:26px 0;cursor:pointer}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{font-family:var(--display);font-size:20px;font-weight:500;letter-spacing:-0.01em;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:color .25s}
+.faq-q::after{content:'+';font-weight:300;color:var(--brand);font-size:28px;transition:transform .3s;line-height:0.7;flex-shrink:0}
+.faq-item.open .faq-q{color:var(--brand)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease, margin .3s;color:var(--ink-dim);font-size:15.5px;line-height:1.65}
+.faq-item.open .faq-a{max-height:400px;margin-top:18px}
+
+/* FINAL */
+.final{padding:140px 0 120px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.final::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:900px;height:600px;
+  background:radial-gradient(ellipse, var(--brand-soft), transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.final-content{position:relative;z-index:2}
+.final-title{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.5vw,72px);line-height:1.0;letter-spacing:-0.025em;margin-bottom:36px;max-width:900px;margin-left:auto;margin-right:auto}
+.final-title em{font-style:italic;color:var(--brand)}
+.final a{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--brand);color:#fff;
+  padding:22px 42px;text-decoration:none;
+  font-family:var(--mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
+  border-radius:6px;transition:transform .25s, box-shadow .3s, background .25s;
+}
+.final a:hover{transform:translateY(-3px);box-shadow:0 18px 38px -10px rgba(217,25,23,.5);background:var(--brand-deep)}
+.final a .arrow{transition:transform .25s}
+.final a:hover .arrow{transform:translateX(5px)}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-align:center;background:var(--bg-2)}
+footer span{color:var(--brand)}
+
+/* ============================================
+   MOBILE-FIRST OVERRIDES — fix v3
+   ============================================ */
+@media(max-width:768px){
+  /* navegação compacta */
+  nav{padding:16px 0}
+  .logo{font-size:20px}
+  .nav-cta{font-size:10px;padding:8px 14px;letter-spacing:0.08em}
+  .nav-cta .arrow{display:none}
+
+  /* HERO compacto */
+  .hero{padding:48px 0 56px}
+  .hero-grid{gap:36px}
+  .eyebrow{margin-bottom:20px;font-size:10px}
+  h1{font-size:38px !important;line-height:1.04;letter-spacing:-0.02em;margin-bottom:20px;word-wrap:break-word;overflow-wrap:break-word;hyphens:auto}
+  .hero-sub{font-size:16px;line-height:1.5;margin-bottom:32px}
+  .hero-meta{gap:22px;padding-top:28px}
+  .meta-num{font-size:30px}
+  .meta-lbl{font-size:9px;letter-spacing:0.08em}
+
+  /* HERO VISUAL — adapta proporção em mobile */
+  .hero-visual{aspect-ratio:4/3;max-height:380px;border-radius:8px}
+  .hero-tag{bottom:14px;left:14px;right:14px;font-size:10px}
+
+  /* strip compacto */
+  .strip{padding:18px 0}
+  .strip-item{font-size:16px;gap:32px}
+  .strip-inner{gap:32px}
+
+  /* sections com padding reduzido */
+  .section{padding:60px 0}
+  .section-title{font-size:32px !important;line-height:1.05;margin-bottom:18px}
+  .section-eyebrow{font-size:10px;margin-bottom:14px}
+  .section-sub{font-size:15.5px;margin-bottom:40px}
+
+  /* problem */
+  .problem{gap:32px}
+  .problem-item{grid-template-columns:1fr;gap:8px;padding:22px 0}
+  .problem-num{font-size:26px;margin-bottom:4px}
+  .problem-item h3{font-size:19px;line-height:1.25;margin-bottom:6px}
+  .problem-item p{font-size:14.5px}
+
+  /* method */
+  .method-step{padding:32px 24px}
+  .method-num{margin-bottom:16px}
+  .method-step h3{font-size:22px;margin-bottom:10px}
+  .method-step p{font-size:14.5px}
+
+  /* included */
+  .included{padding:32px 22px;border-radius:8px}
+  .included-list{gap:16px}
+  .included-list li{padding-left:24px;font-size:14.5px}
+  .included-list li::before{font-size:18px}
+
+  /* why */
+  .why-card{padding:32px 24px;border-radius:8px}
+  .why-card h3{font-size:20px;margin-bottom:10px}
+  .why-card p{font-size:14.5px}
+
+  /* alunos grid mobile */
+  .aluno figcaption{font-size:10px;bottom:12px;left:14px;right:14px}
+  .confra-overlay{padding:24px 22px}
+  .confra-overlay h3{font-size:28px;margin-bottom:10px}
+  .confra-overlay p{font-size:14px}
+
+  /* FAQ */
+  .faq-q{font-size:17px;gap:14px}
+  .faq-q::after{font-size:24px}
+  .faq-item{padding:20px 0}
+
+  /* form section */
+  .form-section{padding:60px 0}
+  .form-grid{gap:32px}
+  .form-side h2{font-size:30px;margin-bottom:18px}
+  .form-side p{font-size:15.5px;margin-bottom:24px}
+  .form-features li{font-size:14px}
+
+  /* form card compacto */
+  .form-card{padding:32px 24px;border-radius:8px}
+  .form-title{font-size:22px;margin-bottom:8px}
+  .form-desc{font-size:14px;margin-bottom:24px}
+  .field{margin-bottom:18px}
+  .field label{font-size:10px}
+  .field input,.field select{font-size:16px;padding:8px 0} /* manter 16px evita zoom iOS */
+  .btn{padding:16px;font-size:12px}
+  .form-foot{font-size:11px;margin-top:16px}
+
+  /* final */
+  .final{padding:72px 0 60px}
+  .final-title{font-size:36px;margin-bottom:24px}
+  .final a{padding:18px 28px;font-size:12px}
+}
+
+/* extra-small (iPhones SE etc) */
+@media(max-width:380px){
+  .wrap{padding:0 16px}
+  h1{font-size:34px !important}
+  .section-title{font-size:28px !important}
+  .nav-cta{font-size:9px;padding:7px 12px}
+  .meta-num{font-size:26px}
+}
+
+/* respeitar usuários com motion reduzido */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+}
+
+/* fallback de motion: se JS quebrar, conteúdo aparece de qualquer jeito */
+.no-js .reveal{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo">waves<span>.</span></div>
+    <a href="#cadastro" class="nav-cta">Quero meu acesso <span class="arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal">Curso completo · Acesso vitalício</div>
+      <h1 class="reveal d1">A diferença entre <em>tentar produzir</em> e <strong>produzir de verdade</strong> é uma palavra: <em>método.</em></h1>
+      <p class="hero-sub reveal d2">O curso completo da Waves para quem está cansado de tutorial solto no YouTube. Do primeiro projeto à faixa pronta para lançamento — no seu ritmo, com plano de aula estruturado por quem vive de produção.</p>
+      <div class="hero-meta reveal d3">
+        <div class="meta-item">
+          <div class="meta-num"><em>6</em></div>
+          <div class="meta-lbl">Países com<br>alunos formados</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-num"><em>∞</em></div>
+          <div class="meta-lbl">Acesso<br>vitalício</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-num"><em>1</em></div>
+          <div class="meta-lbl">Faixa pronta<br>ao final</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL: foto real do estúdio com aluno formado -->
+    <div class="hero-visual reveal d2">
+      <picture>
+        <source srcset="img/aluno-04-deley-lg.webp" type="image/webp">
+        <img src="img/aluno-04-deley.jpg" alt="Aluno formado pela Waves segurando certificado no estúdio em Criciúma" loading="eager" decoding="async">
+      </picture>
+      <div class="hero-tag">
+        <span><span class="dot"></span>&nbsp;&nbsp;Aluno formado · Waves</span>
+        <span>Criciúma · SC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">Produção musical</span>
+    <span class="strip-item">Mixagem profissional</span>
+    <span class="strip-item">Masterização</span>
+    <span class="strip-item">Sound design</span>
+    <span class="strip-item">Composição</span>
+    <span class="strip-item">Arranjo</span>
+    <span class="strip-item">Produção musical</span>
+    <span class="strip-item">Mixagem profissional</span>
+    <span class="strip-item">Masterização</span>
+    <span class="strip-item">Sound design</span>
+    <span class="strip-item">Composição</span>
+    <span class="strip-item">Arranjo</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="wrap">
+    <div class="problem">
+      <div>
+        <div class="section-eyebrow reveal">O que trava 9 de cada 10 produtores</div>
+        <h2 class="section-title reveal d1">Não é falta de <em>talento</em>.<br>É falta de <em>caminho</em>.</h2>
+        <p class="section-sub reveal d2">Quem produz há mais de um ano e sente que não evolui reconhece esses três sintomas. Eles não dizem nada sobre o seu potencial — dizem tudo sobre o método que você está usando.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="problem-num">01</div>
+          <div>
+            <h3>Você assiste tutorial e esquece em três dias.</h3>
+            <p>O YouTube ensina o "como apertar o botão". Não ensina o porquê, o quando, e o que não fazer. Sem método, conhecimento solto vira frustração — não habilidade.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal d1">
+          <div class="problem-num">02</div>
+          <div>
+            <h3>Sua música soa amadora mesmo seguindo a receita.</h3>
+            <p>Mixagem, dinâmica, arranjo, escolha de samples. Existem dezenas de detalhes técnicos que tutorial isolado nunca mostra — porque só fazem sentido dentro de um sistema completo de produção.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal d2">
+          <div class="problem-num">03</div>
+          <div>
+            <h3>Você nunca sente que está pronto para lançar.</h3>
+            <p>Sem alguém apontando o que está bom e o que falta, você refaz a mesma faixa por meses. O lançamento não acontece. A carreira não começa. E o tempo passa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">O método Waves</div>
+    <h2 class="section-title reveal d1">Três etapas.<br>Uma <em>faixa pronta</em> no final.</h2>
+    <p class="section-sub reveal d2">Não é "assista quando der e boa sorte". É um caminho linear, do zero ao master final, desenhado por quem vive de produção há anos.</p>
+    <div class="method reveal d3">
+      <div class="method-step">
+        <span class="method-num">↳ Etapa 01</span>
+        <h3>Fundação</h3>
+        <p>Teoria aplicada à produção: ritmo, harmonia, escolha da sua ferramenta de trabalho, fluxo profissional. Você sai dessa etapa com a sua primeira ideia musical estruturada — e a confiança técnica para seguir.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">↳ Etapa 02</span>
+        <h3>Produção</h3>
+        <p>Composição, arranjo, sound design e gravação. Aqui a ideia vira faixa completa, com decisões técnicas conscientes em cada elemento. É o salto do amador para o produtor.</p>
+      </div>
+      <div class="method-step">
+        <span class="method-num">↳ Etapa 03</span>
+        <h3>Mixagem & Master</h3>
+        <p>Os processos que separam o som amador do profissional. Você termina o curso com uma faixa mixada, masterizada e pronta para qualquer plataforma de streaming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">O que está dentro</div>
+    <h2 class="section-title reveal d1">Tudo o que você precisa.<br><em>Nada</em> que você não vai usar.</h2>
+    <div class="included reveal d2">
+      <div class="included-grid">
+        <ul class="included-list">
+          <li><strong>Curso completo gravado</strong><span>Aulas em alta resolução, divididas por módulo e etapa. <span style="color:#6b5453">[CONFIRMAR: total de horas]</span></span></li>
+          <li><strong>Acesso vitalício</strong><span>Atualizações futuras incluídas. Compra única, sem mensalidade, sem prazo de expiração.</span></li>
+          <li><strong>Material de apoio completo</strong><span>PDFs, presets, samples e templates usados em todas as aulas — prontos para você baixar e aplicar.</span></li>
+          <li><strong>Comunidade fechada</strong><span>Grupo com alunos ativos para tirar dúvidas, compartilhar projetos e construir rede.</span></li>
+        </ul>
+        <ul class="included-list">
+          <li><strong>Projetos práticos guiados</strong><span>Exercícios em cada módulo. Aprendizado por prática, não só por teoria.</span></li>
+          <li><strong>Certificado Waves</strong><span>Emitido ao final do curso. Reconhecido na cena nacional e internacional.</span></li>
+          <li><strong>Suporte direto</strong><span>Time disponível para resolver questões de plataforma, progresso e dúvidas técnicas.</span></li>
+          <li><strong>Bônus: aulas de carreira</strong><span>Como lançar no streaming, divulgar nas redes e começar a tocar profissionalmente.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALUNOS FORMADOS — substitui o Por que a Waves -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Quem já passou por aqui</div>
+    <h2 class="section-title reveal d1">Alunos reais.<br><em>Certificados</em> nas mãos.</h2>
+    <p class="section-sub reveal d2">Não é catálogo, não é stock. São pessoas que entraram, completaram o método e saíram com a primeira faixa pronta. Estes são alguns deles.</p>
+
+    <div class="alunos-grid">
+      <figure class="aluno reveal">
+        <picture>
+          <source srcset="img/aluno-04-deley-md.webp" type="image/webp">
+          <img src="img/aluno-04-deley.jpg" alt="Aluno formado segurando certificado" loading="lazy">
+        </picture>
+        <figcaption>Curso de Produção · Mega Funk</figcaption>
+      </figure>
+      <figure class="aluno reveal d1">
+        <picture>
+          <source srcset="img/aluno-02-kamila-carol-md.webp" type="image/webp">
+          <img src="img/aluno-02-kamila-carol.jpg" alt="Alunas formadas segurando certificados no estúdio Waves" loading="lazy">
+        </picture>
+        <figcaption>Curso de Discotecagem</figcaption>
+      </figure>
+      <figure class="aluno reveal d2">
+        <picture>
+          <source srcset="img/aluno-05-bruno-md.webp" type="image/webp">
+          <img src="img/aluno-05-bruno.jpg" alt="Aluno formado em curso de produção musical" loading="lazy">
+        </picture>
+        <figcaption>Curso de Produção · Mega Funk</figcaption>
+      </figure>
+      <figure class="aluno reveal d3">
+        <picture>
+          <source srcset="img/aluno-01-rhyda-md.webp" type="image/webp">
+          <img src="img/aluno-01-rhyda.jpg" alt="Aluna formada em discotecagem segurando certificado" loading="lazy">
+        </picture>
+        <figcaption>Curso de Discotecagem</figcaption>
+      </figure>
+      <figure class="aluno reveal">
+        <picture>
+          <source srcset="img/aluno-03-caua-md.webp" type="image/webp">
+          <img src="img/aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
+        </picture>
+        <figcaption>Especialização em Discotecagem</figcaption>
+      </figure>
+      <figure class="aluno reveal d1">
+        <picture>
+          <source srcset="img/aluno-06-ramon-md.webp" type="image/webp">
+          <img src="img/aluno-06-ramon.jpg" alt="Aluno formado em curso de DJ" loading="lazy">
+        </picture>
+        <figcaption>Curso de Discotecagem</figcaption>
+      </figure>
+    </div>
+
+    <!-- bloco confraternização — comunidade -->
+    <div class="confra reveal d2">
+      <picture>
+        <source srcset="img/confra-01-lg.webp" type="image/webp">
+        <img src="img/confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
+      </picture>
+      <div class="confra-overlay">
+        <span class="confra-tag">1ª Confraternização · Criciúma</span>
+        <h3>Mais que aluno.<br><em>Comunidade.</em></h3>
+        <p>A Waves não termina quando o curso acaba. A rede de alunos que se formam continua junta — e é por isso que muita gente toca em evento de outro aluno, lança parceria, vira artista convidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Perguntas frequentes</div>
+    <h2 class="section-title reveal d1">Dúvidas <em>antes</em> de entrar.</h2>
+    <div class="faq-list reveal d2" style="margin-top:60px">
+      <div class="faq-item">
+        <div class="faq-q">Preciso ter conhecimento prévio em produção?</div>
+        <div class="faq-a">Não. O curso começa do zero — desde a escolha da ferramenta de produção até técnicas avançadas. Se você nunca abriu um software de produção musical, vai conseguir acompanhar. Se já produz, usa os módulos iniciais para fechar lacunas e segue direto para a produção avançada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto tempo leva para concluir?</div>
+        <div class="faq-a">Depende do seu ritmo. Alunos com 3-5 horas semanais de dedicação concluem em quatro a seis meses. Como o acesso é vitalício, o passo é seu — sem cobrança de prazo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Preciso de equipamento profissional?</div>
+        <div class="faq-a">Não. Um notebook razoável e um fone decente bastam para começar. As primeiras aulas mostram como configurar tudo com o que você já tem disponível.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funciona para qualquer estilo musical?</div>
+        <div class="faq-a">Sim. O método ensina os fundamentos universais de produção. As técnicas se aplicam a música eletrônica, hip-hop, pop, sertanejo e qualquer outro gênero. Alunos da Waves produzem estilos completamente diferentes — porque a base é a mesma.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual o valor e como funciona o pagamento?</div>
+        <div class="faq-a">O valor e as condições atuais — incluindo parcelamento e bônus do mês — são apresentados pelo consultor após o cadastro. Não há mensalidade: é uma compra única com acesso vitalício e todas as atualizações futuras incluídas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="cadastro">
+  <div class="wrap form-grid">
+    <div class="form-side">
+      <div class="section-eyebrow reveal">Quero o acesso</div>
+      <h2 class="reveal d1">O próximo passo é<br>uma <em>conversa</em>.</h2>
+      <p class="reveal d2">Preencha ao lado e em poucos minutos um consultor te chama no WhatsApp. Sem compromisso. Você recebe os detalhes do curso, o valor com as condições do mês e tira todas as dúvidas antes de decidir.</p>
+      <ul class="form-features reveal d3">
+        <li>Resposta em até 1 hora útil</li>
+        <li>Conversa sem pressão de venda</li>
+        <li>Conheça o método antes de qualquer pagamento</li>
+        <li>Parcelamento facilitado quando você decidir</li>
+      </ul>
+    </div>
+
+    <form class="form-card reveal d2" id="lead-form" novalidate>
+      <span class="form-tag">→ Cadastro</span>
+      <h2 class="form-title">Receba o contato do time da Waves</h2>
+      <p class="form-desc">Quatro campos, dois minutos. Depois é só conversar.</p>
+
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="whats">WhatsApp (com DDD)</label>
+        <input type="tel" id="whats" name="whats" required autocomplete="tel" placeholder="(48) 99999-9999" />
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="exp">Seu nível atual</label>
+        <select id="exp" name="exp" required>
+          <option value="">Selecione uma opção</option>
+          <option value="iniciante">Iniciante — nunca produzi nada</option>
+          <option value="basico">Básico — já mexi em alguma DAW</option>
+          <option value="intermediario">Intermediário — produzo há mais de 1 ano</option>
+          <option value="profissional">Profissional — quero refinar técnica</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">
+        Quero meu acesso <span class="arrow">→</span>
+      </button>
+      <p class="form-foot">Seus dados ficam só com a Waves. Sem spam.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap final-content">
+    <h2 class="final-title reveal">Música boa não nasce de <em>sorte</em>.<br>Nasce de <em>método</em>.</h2>
+    <a href="#cadastro" class="reveal d1" onclick="setTimeout(()=>document.getElementById('nome').focus(),700)">
+      Quero entrar para a Waves <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© WAVES INTERNACIONAL · <span>ESCOLA DE PRODUÇÃO MUSICAL</span> · CRICIÚMA / SC</div>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// Reveal on scroll com fallback de segurança
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+  // Fallback de segurança: após 4s, força tudo a aparecer (caso usuário tenha rolado rápido)
+  setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 4000);
+} else {
+  // Sem IO: mostra tudo
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+// Scroll progress bar
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  prog.style.width = p + '%';
+}, { passive: true });
+
+// WhatsApp number — CONFIRMAR
+const WHATSAPP = '554898083842';
+
+// UTM capture
+function getUTMs(){
+  const p = new URLSearchParams(window.location.search);
+  return {
+    source: p.get('utm_source') || 'direct',
+    medium: p.get('utm_medium') || 'na',
+    campaign: p.get('utm_campaign') || 'na',
+    content: p.get('utm_content') || 'na',
+    term: p.get('utm_term') || 'na'
+  };
+}
+
+// Form submit
+document.getElementById('lead-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = {
+    nome: document.getElementById('nome').value.trim(),
+    whats: document.getElementById('whats').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    exp: document.getElementById('exp').value,
+    ...getUTMs()
+  };
+  if(!data.nome || !data.whats || !data.email || !data.exp){
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+  if(typeof fbq === 'function'){
+    fbq('track', 'Lead', {
+      content_name: 'LP_Curso_Gravado_v2',
+      content_category: 'curso_gravado'
+    });
+  }
+  const msg = encodeURIComponent(
+    `Olá! Acabei de me cadastrar no site da Waves.\n\n` +
+    `Nome: ${data.nome}\n` +
+    `E-mail: ${data.email}\n` +
+    `Nível: ${data.exp}\n\n` +
+    `Quero saber mais sobre o curso completo!\n` +
+    `(origem: ${data.campaign} / ${data.content})`
+  );
+  window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+});
+
+// nav cta smooth scroll
+document.querySelector('.nav-cta').addEventListener('click', function(e){
+  e.preventDefault();
+  document.querySelector('#cadastro').scrollIntoView({behavior:'smooth', block:'start'});
+  setTimeout(()=>document.getElementById('nome').focus(), 700);
+});
+</script>
+</body>
+</html>
