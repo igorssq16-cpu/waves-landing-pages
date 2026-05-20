@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>WAVES — Curso de Produção Musical</title>
-<meta name="description" content="Curso completo de produção musical. Método estruturado, acesso vitalício, escola com alunos em 6 países." />
+<title>WAVES — Curso de Produção Musical em Criciúma e Online</title>
+<meta name="description" content="Aprenda a produzir música do zero ao avançado. 16 aulas práticas com produtor profissional, presencial em Criciúma ou online de qualquer lugar do Brasil." />
 
 <!-- META PIXEL -->
 <script>
@@ -15,7 +15,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1745629623514914');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name: 'LP_Curso_Gravado_v2', content_category: 'curso_gravado'});
+fbq('track', 'ViewContent', {content_name: 'LP_Producao_Musical', content_category: 'curso_producao'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></noscript>
@@ -376,6 +376,55 @@ h1 strong{font-weight:600;color:var(--ink)}
 @media(max-width:640px){
   .confra-overlay p{font-size:13.5px;line-height:1.5}
 }
+
+/* SPOTIFY SECTION */
+.spotify-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:12px;
+}
+@media(max-width:900px){.spotify-grid{grid-template-columns:repeat(2, 1fr)}}
+@media(max-width:480px){.spotify-grid{grid-template-columns:1fr}}
+.spotify-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px 18px;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--ink);
+  transition:transform .25s ease, border-color .25s, background .25s;
+  position:relative;
+}
+.spotify-card:hover{
+  transform:translateY(-3px);
+  border-color:#1ed760;
+  background:#100a0a;
+}
+.spotify-logo{
+  width:28px;height:28px;flex-shrink:0;display:block;
+}
+.spotify-name{
+  flex:1;
+  font-size:14.5px;
+  font-weight:500;
+  color:var(--ink);
+  letter-spacing:-0.005em;
+}
+.spotify-link{
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--ink-mute);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .25s, transform .25s;
+}
+.spotify-card:hover .spotify-link{
+  color:#1ed760;
+  transform:translateX(3px);
+}
 .why-card{
   background:var(--bg-2);
   border:1px solid var(--line);
@@ -495,6 +544,11 @@ footer span{color:var(--brand)}
   .confra-overlay h3{font-size:28px;margin-bottom:10px}
   .confra-overlay p{font-size:14px}
 
+  /* spotify mobile */
+  .spotify-card{padding:14px 16px;gap:12px}
+  .spotify-name{font-size:14px}
+  .spotify-logo{width:24px;height:24px}
+
   /* FAQ */
   .faq-q{font-size:17px;gap:14px}
   .faq-q::after{font-size:24px}
@@ -557,21 +611,21 @@ footer span{color:var(--brand)}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow reveal">Curso completo · Acesso vitalício</div>
-      <h1 class="reveal d1">A diferença entre <em>tentar produzir</em> e <strong>produzir de verdade</strong> é uma palavra: <em>método.</em></h1>
-      <p class="hero-sub reveal d2">O curso completo da Waves para quem está cansado de tutorial solto no YouTube. Do primeiro projeto à faixa pronta para lançamento — no seu ritmo, com plano de aula estruturado por quem vive de produção.</p>
+      <div class="eyebrow reveal">Curso de Produção Musical · 16 aulas · Presencial ou Online</div>
+      <h1 class="reveal d1">Pare de <em>esperar</em> a hora certa.<br><strong>Sua primeira música finalizada</strong> sai daqui.</h1>
+      <p class="hero-sub reveal d2">Curso completo de produção musical da Waves. Em 16 aulas práticas, do zero ao avançado, você aprende criação de beats, gravação de voz, mixagem, masterização e finalização. Presencial em Criciúma ou online de qualquer lugar.</p>
       <div class="hero-meta reveal d3">
         <div class="meta-item">
-          <div class="meta-num"><em>6</em></div>
-          <div class="meta-lbl">Países com<br>alunos formados</div>
+          <div class="meta-num"><em>16</em></div>
+          <div class="meta-lbl">Aulas práticas<br>de 1 hora</div>
         </div>
         <div class="meta-item">
-          <div class="meta-num"><em>∞</em></div>
-          <div class="meta-lbl">Acesso<br>vitalício</div>
+          <div class="meta-num"><em>1:1</em></div>
+          <div class="meta-lbl">Individual ou<br>em dupla</div>
         </div>
         <div class="meta-item">
-          <div class="meta-num"><em>1</em></div>
-          <div class="meta-lbl">Faixa pronta<br>ao final</div>
+          <div class="meta-num"><em>SC</em></div>
+          <div class="meta-lbl">Presencial<br>em Criciúma</div>
         </div>
       </div>
     </div>
@@ -579,8 +633,8 @@ footer span{color:var(--brand)}
     <!-- HERO VISUAL: foto real do estúdio com aluno formado -->
     <div class="hero-visual reveal d2">
       <picture>
-        <source srcset="img/aluno-04-deley-lg.webp" type="image/webp">
-        <img src="img/aluno-04-deley.jpg" alt="Aluno formado pela Waves segurando certificado no estúdio em Criciúma" loading="eager" decoding="async">
+        <source srcset="aluno-04-deley-lg.webp" type="image/webp">
+        <img src="aluno-04-deley.jpg" alt="Aluno formado pela Waves segurando certificado no estúdio em Criciúma" loading="eager" decoding="async">
       </picture>
       <div class="hero-tag">
         <span><span class="dot"></span>&nbsp;&nbsp;Aluno formado · Waves</span>
@@ -593,18 +647,18 @@ footer span{color:var(--brand)}
 <!-- STRIP -->
 <div class="strip">
   <div class="strip-inner">
-    <span class="strip-item">Produção musical</span>
-    <span class="strip-item">Mixagem profissional</span>
+    <span class="strip-item">Criação de beats</span>
+    <span class="strip-item">Gravação de voz</span>
+    <span class="strip-item">Mixagem</span>
     <span class="strip-item">Masterização</span>
-    <span class="strip-item">Sound design</span>
-    <span class="strip-item">Composição</span>
-    <span class="strip-item">Arranjo</span>
-    <span class="strip-item">Produção musical</span>
-    <span class="strip-item">Mixagem profissional</span>
+    <span class="strip-item">Identidade sonora</span>
+    <span class="strip-item">Finalização profissional</span>
+    <span class="strip-item">Criação de beats</span>
+    <span class="strip-item">Gravação de voz</span>
+    <span class="strip-item">Mixagem</span>
     <span class="strip-item">Masterização</span>
-    <span class="strip-item">Sound design</span>
-    <span class="strip-item">Composição</span>
-    <span class="strip-item">Arranjo</span>
+    <span class="strip-item">Identidade sonora</span>
+    <span class="strip-item">Finalização profissional</span>
   </div>
 </div>
 
@@ -613,30 +667,30 @@ footer span{color:var(--brand)}
   <div class="wrap">
     <div class="problem">
       <div>
-        <div class="section-eyebrow reveal">O que trava 9 de cada 10 produtores</div>
-        <h2 class="section-title reveal d1">Não é falta de <em>talento</em>.<br>É falta de <em>caminho</em>.</h2>
-        <p class="section-sub reveal d2">Quem produz há mais de um ano e sente que não evolui reconhece esses três sintomas. Eles não dizem nada sobre o seu potencial — dizem tudo sobre o método que você está usando.</p>
+        <div class="section-eyebrow reveal">Por que sua música não sai do rascunho</div>
+        <h2 class="section-title reveal d1">Não é falta de <em>ideia</em>.<br>É falta de <em>caminho</em>.</h2>
+        <p class="section-sub reveal d2">Quem tenta produzir sozinho conhece esses três becos. Nenhum deles é sobre talento — todos são sobre método.</p>
       </div>
       <div class="problem-list">
         <div class="problem-item reveal">
           <div class="problem-num">01</div>
           <div>
-            <h3>Você assiste tutorial e esquece em três dias.</h3>
-            <p>O YouTube ensina o "como apertar o botão". Não ensina o porquê, o quando, e o que não fazer. Sem método, conhecimento solto vira frustração — não habilidade.</p>
+            <h3>Suas faixas começam, mas nunca terminam.</h3>
+            <p>Você abre um projeto novo, coloca alguns elementos, joga umas ideias — e duas semanas depois está num projeto totalmente diferente. Sem fluxo de trabalho profissional, faixa pronta nunca sai do "quase".</p>
           </div>
         </div>
         <div class="problem-item reveal d1">
           <div class="problem-num">02</div>
           <div>
-            <h3>Sua música soa amadora mesmo seguindo a receita.</h3>
-            <p>Mixagem, dinâmica, arranjo, escolha de samples. Existem dezenas de detalhes técnicos que tutorial isolado nunca mostra — porque só fazem sentido dentro de um sistema completo de produção.</p>
+            <h3>Sua mixagem soa "amadora" e você não sabe por quê.</h3>
+            <p>O kick não bate, o vocal soa fraco, tem coisa "chocando" na mix e você não consegue identificar. Mixagem e masterização não são detalhe — é o que separa rascunho de música que toca em qualquer lugar.</p>
           </div>
         </div>
         <div class="problem-item reveal d2">
           <div class="problem-num">03</div>
           <div>
-            <h3>Você nunca sente que está pronto para lançar.</h3>
-            <p>Sem alguém apontando o que está bom e o que falta, você refaz a mesma faixa por meses. O lançamento não acontece. A carreira não começa. E o tempo passa.</p>
+            <h3>Você não sabe quando uma música está pronta.</h3>
+            <p>Sem alguém ouvindo com ouvido profissional e dizendo "está pronto, lança", você refaz a mesma faixa por meses. Sem lançamento, não tem carreira. Sem feedback técnico, não tem evolução.</p>
           </div>
         </div>
       </div>
@@ -647,24 +701,24 @@ footer span{color:var(--brand)}
 <!-- METHOD -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="section-eyebrow reveal">O método Waves</div>
-    <h2 class="section-title reveal d1">Três etapas.<br>Uma <em>faixa pronta</em> no final.</h2>
-    <p class="section-sub reveal d2">Não é "assista quando der e boa sorte". É um caminho linear, do zero ao master final, desenhado por quem vive de produção há anos.</p>
+    <div class="section-eyebrow reveal">Como funciona</div>
+    <h2 class="section-title reveal d1">16 aulas.<br>Um <em>caminho</em> do zero<br>à <em>música finalizada</em>.</h2>
+    <p class="section-sub reveal d2">Cada aula tem objetivo claro e exercício prático. Você sai sabendo aplicar, não só assistindo. Aulas individuais ou em dupla, 1h cada, no seu ritmo.</p>
     <div class="method reveal d3">
       <div class="method-step">
-        <span class="method-num">↳ Etapa 01</span>
-        <h3>Fundação</h3>
-        <p>Teoria aplicada à produção: ritmo, harmonia, escolha da sua ferramenta de trabalho, fluxo profissional. Você sai dessa etapa com a sua primeira ideia musical estruturada — e a confiança técnica para seguir.</p>
+        <span class="method-num">↳ Etapa 01 · Criação</span>
+        <h3>Beat & arranjo</h3>
+        <p>Criação de beats, escolha de sons, estrutura musical, harmonia aplicada. Você sai da etapa com a sua primeira ideia musical estruturada e fluxo de trabalho profissional.</p>
       </div>
       <div class="method-step">
-        <span class="method-num">↳ Etapa 02</span>
-        <h3>Produção</h3>
-        <p>Composição, arranjo, sound design e gravação. Aqui a ideia vira faixa completa, com decisões técnicas conscientes em cada elemento. É o salto do amador para o produtor.</p>
+        <span class="method-num">↳ Etapa 02 · Voz</span>
+        <h3>Gravação & produção vocal</h3>
+        <p>Captação, edição, afinação e tratamento de voz. Como integrar o vocal ao instrumental para soar coeso e profissional — não dois mundos separados na mesma faixa.</p>
       </div>
       <div class="method-step">
-        <span class="method-num">↳ Etapa 03</span>
-        <h3>Mixagem & Master</h3>
-        <p>Os processos que separam o som amador do profissional. Você termina o curso com uma faixa mixada, masterizada e pronta para qualquer plataforma de streaming.</p>
+        <span class="method-num">↳ Etapa 03 · Finalização</span>
+        <h3>Mix, master & identidade</h3>
+        <p>Mixagem equilibrando todos os elementos, masterização garantindo volume e clareza, e construção da sua identidade sonora. Sua faixa pronta para qualquer plataforma.</p>
       </div>
     </div>
   </div>
@@ -674,20 +728,20 @@ footer span{color:var(--brand)}
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="section-eyebrow reveal">O que está dentro</div>
-    <h2 class="section-title reveal d1">Tudo o que você precisa.<br><em>Nada</em> que você não vai usar.</h2>
+    <h2 class="section-title reveal d1">Aula prática.<br>Acompanhamento <em>real</em>.</h2>
     <div class="included reveal d2">
       <div class="included-grid">
         <ul class="included-list">
-          <li><strong>Curso completo gravado</strong><span>Aulas em alta resolução, divididas por módulo e etapa. <span style="color:#6b5453">[CONFIRMAR: total de horas]</span></span></li>
-          <li><strong>Acesso vitalício</strong><span>Atualizações futuras incluídas. Compra única, sem mensalidade, sem prazo de expiração.</span></li>
-          <li><strong>Material de apoio completo</strong><span>PDFs, presets, samples e templates usados em todas as aulas — prontos para você baixar e aplicar.</span></li>
-          <li><strong>Comunidade fechada</strong><span>Grupo com alunos ativos para tirar dúvidas, compartilhar projetos e construir rede.</span></li>
+          <li><strong>16 aulas de 1 hora</strong><span>Aulas individuais ou em dupla, presenciais em Criciúma ou online ao vivo. Frequência ajustada à sua rotina.</span></li>
+          <li><strong>Plano de aula personalizado</strong><span>Não é "assista o módulo X". O programa adapta ao seu estilo musical, nível de partida e objetivo final.</span></li>
+          <li><strong>Projeto prático em cada aula</strong><span>Você aplica o que aprendeu na hora, com o produtor te corrigindo em tempo real. Aprendizado por prática, não por teoria.</span></li>
+          <li><strong>Estúdio profissional disponível</strong><span>Para quem escolhe presencial, estúdio completo em Criciúma com equipamento necessário. Você não precisa ter setup próprio para começar.</span></li>
         </ul>
         <ul class="included-list">
-          <li><strong>Projetos práticos guiados</strong><span>Exercícios em cada módulo. Aprendizado por prática, não só por teoria.</span></li>
-          <li><strong>Certificado Waves</strong><span>Emitido ao final do curso. Reconhecido na cena nacional e internacional.</span></li>
-          <li><strong>Suporte direto</strong><span>Time disponível para resolver questões de plataforma, progresso e dúvidas técnicas.</span></li>
-          <li><strong>Bônus: aulas de carreira</strong><span>Como lançar no streaming, divulgar nas redes e começar a tocar profissionalmente.</span></li>
+          <li><strong>Feedback direto na sua música</strong><span>Você traz sua faixa, o produtor escuta com ouvido profissional e aponta exatamente o que melhorar — em cada aula.</span></li>
+          <li><strong>Certificado Waves</strong><span>Emitido ao final do programa. Reconhecido na cena nacional.</span></li>
+          <li><strong>Identidade sonora própria</strong><span>Não saímos com "som de aluno". O método trabalha sua identidade artística desde a primeira aula.</span></li>
+          <li><strong>Ponte para o ecossistema Waves</strong><span>Quem se forma na escola tem acesso aos serviços de mix/master, lançamento e assessoria — quando quiser dar o próximo passo.</span></li>
         </ul>
       </div>
     </div>
@@ -704,59 +758,106 @@ footer span{color:var(--brand)}
     <div class="alunos-grid">
       <figure class="aluno reveal">
         <picture>
-          <source srcset="img/aluno-04-deley-md.webp" type="image/webp">
-          <img src="img/aluno-04-deley.jpg" alt="Aluno formado segurando certificado" loading="lazy">
+          <source srcset="aluno-04-deley-md.webp" type="image/webp">
+          <img src="aluno-04-deley.jpg" alt="Aluno formado segurando certificado" loading="lazy">
         </picture>
-        <figcaption>Curso de Produção · Mega Funk</figcaption>
+        <figcaption>Curso de Produção Musical</figcaption>
       </figure>
       <figure class="aluno reveal d1">
         <picture>
-          <source srcset="img/aluno-02-kamila-carol-md.webp" type="image/webp">
-          <img src="img/aluno-02-kamila-carol.jpg" alt="Alunas formadas segurando certificados no estúdio Waves" loading="lazy">
+          <source srcset="aluno-02-kamila-carol-md.webp" type="image/webp">
+          <img src="aluno-02-kamila-carol.jpg" alt="Alunas formadas segurando certificados no estúdio Waves" loading="lazy">
         </picture>
-        <figcaption>Curso de Discotecagem</figcaption>
+        <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal d2">
         <picture>
-          <source srcset="img/aluno-05-bruno-md.webp" type="image/webp">
-          <img src="img/aluno-05-bruno.jpg" alt="Aluno formado em curso de produção musical" loading="lazy">
+          <source srcset="aluno-05-bruno-md.webp" type="image/webp">
+          <img src="aluno-05-bruno.jpg" alt="Aluno formado em curso de produção musical" loading="lazy">
         </picture>
-        <figcaption>Curso de Produção · Mega Funk</figcaption>
+        <figcaption>Curso de Produção Musical</figcaption>
       </figure>
       <figure class="aluno reveal d3">
         <picture>
-          <source srcset="img/aluno-01-rhyda-md.webp" type="image/webp">
-          <img src="img/aluno-01-rhyda.jpg" alt="Aluna formada em discotecagem segurando certificado" loading="lazy">
+          <source srcset="aluno-01-rhyda-md.webp" type="image/webp">
+          <img src="aluno-01-rhyda.jpg" alt="Aluna formada em discotecagem segurando certificado" loading="lazy">
         </picture>
-        <figcaption>Curso de Discotecagem</figcaption>
+        <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal">
         <picture>
-          <source srcset="img/aluno-03-caua-md.webp" type="image/webp">
-          <img src="img/aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
+          <source srcset="aluno-03-caua-md.webp" type="image/webp">
+          <img src="aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
         </picture>
-        <figcaption>Especialização em Discotecagem</figcaption>
+        <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal d1">
         <picture>
-          <source srcset="img/aluno-06-ramon-md.webp" type="image/webp">
-          <img src="img/aluno-06-ramon.jpg" alt="Aluno formado em curso de DJ" loading="lazy">
+          <source srcset="aluno-06-ramon-md.webp" type="image/webp">
+          <img src="aluno-06-ramon.jpg" alt="Aluno formado em curso de DJ" loading="lazy">
         </picture>
-        <figcaption>Curso de Discotecagem</figcaption>
+        <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
     </div>
 
     <!-- bloco confraternização — comunidade -->
     <div class="confra reveal d2">
       <picture>
-        <source srcset="img/confra-01-lg.webp" type="image/webp">
-        <img src="img/confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
+        <source srcset="confra-01-lg.webp" type="image/webp">
+        <img src="confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
       </picture>
       <div class="confra-overlay">
         <span class="confra-tag">1ª Confraternização · Criciúma</span>
         <h3>Mais que aluno.<br><em>Comunidade.</em></h3>
-        <p>A Waves não termina quando o curso acaba. A rede de alunos que se formam continua junta — e é por isso que muita gente toca em evento de outro aluno, lança parceria, vira artista convidado.</p>
+        <p>A Waves não termina quando o curso acaba. A rede de alunos continua junta, lançando música, trocando palco, gravando parceria. É o tipo de coisa que tutorial no YouTube não entrega.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPOTIFY — artistas no streaming -->
+<section class="section spotify-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Streaming · Spotify</div>
+    <h2 class="section-title reveal d1">Artistas com música<br><em>no ar</em>. Agora.</h2>
+    <p class="section-sub reveal d2">Não é teoria. Estes são alguns dos artistas conectados ao ecossistema Waves — com faixas no streaming, ouvidos no Brasil e fora dele. Quem termina o curso e quer evoluir, encontra aqui o próximo passo.</p>
+
+    <div class="spotify-grid reveal d3">
+      <a href="https://open.spotify.com/intl-pt/artist/2u2rmoEXSmUyYKzyPKrJ0j" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Shefreq</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/1fZ1xy8Aew7YeBeEYIwJDJ" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">DD Lopes</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/0l3kLYqlS62khHAdTUyFiX" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Rav3n</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/5zGJzxxa4L5Eg3mkLTyyyM" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Tiphany Andersen</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/7DoYwpiSvZkycEEcVO5mPh" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Big Papo</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/4Pm95s0IEvJNmM8yqNtgCe" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Sanchez</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/0rwJCH1c2vjhByOyVH8bAT" target="_blank" rel="noopener" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Maycon Casagrande</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -769,23 +870,31 @@ footer span{color:var(--brand)}
     <div class="faq-list reveal d2" style="margin-top:60px">
       <div class="faq-item">
         <div class="faq-q">Preciso ter conhecimento prévio em produção?</div>
-        <div class="faq-a">Não. O curso começa do zero — desde a escolha da ferramenta de produção até técnicas avançadas. Se você nunca abriu um software de produção musical, vai conseguir acompanhar. Se já produz, usa os módulos iniciais para fechar lacunas e segue direto para a produção avançada.</div>
+        <div class="faq-a">Não. O curso começa do zero — desde a escolha da ferramenta de produção até técnicas avançadas. Se você nunca abriu um software de produção musical, vai conseguir acompanhar. Se já produz, usa as primeiras aulas para fechar lacunas e segue direto para a produção avançada.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Quanto tempo leva para concluir?</div>
-        <div class="faq-a">Depende do seu ritmo. Alunos com 3-5 horas semanais de dedicação concluem em quatro a seis meses. Como o acesso é vitalício, o passo é seu — sem cobrança de prazo.</div>
+        <div class="faq-q">Quantas aulas tem o curso e quanto tempo dura?</div>
+        <div class="faq-a">São 16 aulas de 1 hora, geralmente distribuídas em 3 a 5 meses dependendo do seu ritmo. A frequência (semanal, quinzenal, intensiva) é definida com o produtor logo no início.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Preciso de equipamento profissional?</div>
-        <div class="faq-a">Não. Um notebook razoável e um fone decente bastam para começar. As primeiras aulas mostram como configurar tudo com o que você já tem disponível.</div>
+        <div class="faq-q">Posso fazer individual ou em dupla?</div>
+        <div class="faq-a">Os dois formatos existem. Individual é mentoria 100% personalizada para o seu estilo musical. Em dupla, o programa é o mesmo, mas o investimento divide e o aprendizado fica mais dinâmico — bom para quem tem um amigo com objetivo próximo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como funciona o presencial em Criciúma?</div>
+        <div class="faq-a">Aulas no estúdio próprio da Waves em Criciúma (SC), com equipamento profissional disponível durante as aulas. Você não precisa ter setup completo em casa para começar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E o online — funciona igual?</div>
+        <div class="faq-a">Aulas ao vivo em videochamada, com tela compartilhada, projeto aberto e correção em tempo real. Você fica em casa, com seu próprio setup, e o produtor te guia em cada decisão técnica — exatamente como no presencial.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Funciona para qualquer estilo musical?</div>
-        <div class="faq-a">Sim. O método ensina os fundamentos universais de produção. As técnicas se aplicam a música eletrônica, hip-hop, pop, sertanejo e qualquer outro gênero. Alunos da Waves produzem estilos completamente diferentes — porque a base é a mesma.</div>
+        <div class="faq-a">Sim. Os fundamentos de produção (composição, arranjo, mix, master) se aplicam a qualquer gênero — eletrônica, funk, mega funk, pop, sertanejo, hip-hop. O programa adapta ao seu estilo no plano de aula personalizado.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Qual o valor e como funciona o pagamento?</div>
-        <div class="faq-a">O valor e as condições atuais — incluindo parcelamento e bônus do mês — são apresentados pelo consultor após o cadastro. Não há mensalidade: é uma compra única com acesso vitalício e todas as atualizações futuras incluídas.</div>
+        <div class="faq-a">O valor exato e as condições — incluindo parcelamento e diferença entre individual e dupla — são apresentados pelo consultor após o cadastro. Trabalhamos com parcelamento facilitado.</div>
       </div>
     </div>
   </div>
@@ -795,20 +904,20 @@ footer span{color:var(--brand)}
 <section class="form-section" id="cadastro">
   <div class="wrap form-grid">
     <div class="form-side">
-      <div class="section-eyebrow reveal">Quero o acesso</div>
-      <h2 class="reveal d1">O próximo passo é<br>uma <em>conversa</em>.</h2>
-      <p class="reveal d2">Preencha ao lado e em poucos minutos um consultor te chama no WhatsApp. Sem compromisso. Você recebe os detalhes do curso, o valor com as condições do mês e tira todas as dúvidas antes de decidir.</p>
+      <div class="section-eyebrow reveal">Quero começar</div>
+      <h2 class="reveal d1">Próximo passo:<br>uma <em>conversa</em>.</h2>
+      <p class="reveal d2">Preenche ao lado e em poucos minutos um consultor te chama no WhatsApp. Sem pressão de venda. Você recebe os detalhes do curso, valor com condições do mês, e tira todas as dúvidas antes de decidir.</p>
       <ul class="form-features reveal d3">
         <li>Resposta em até 1 hora útil</li>
-        <li>Conversa sem pressão de venda</li>
-        <li>Conheça o método antes de qualquer pagamento</li>
+        <li>Plano de aula adaptado ao seu nível e estilo</li>
+        <li>Indicação de formato: individual ou dupla, presencial ou online</li>
         <li>Parcelamento facilitado quando você decidir</li>
       </ul>
     </div>
 
     <form class="form-card reveal d2" id="lead-form" novalidate>
       <span class="form-tag">→ Cadastro</span>
-      <h2 class="form-title">Receba o contato do time da Waves</h2>
+      <h2 class="form-title">Receba contato do time da Waves</h2>
       <p class="form-desc">Quatro campos, dois minutos. Depois é só conversar.</p>
 
       <div class="field">
@@ -824,18 +933,18 @@ footer span{color:var(--brand)}
         <input type="email" id="email" name="email" required autocomplete="email" />
       </div>
       <div class="field">
-        <label for="exp">Seu nível atual</label>
+        <label for="exp">Seu momento atual</label>
         <select id="exp" name="exp" required>
           <option value="">Selecione uma opção</option>
-          <option value="iniciante">Iniciante — nunca produzi nada</option>
-          <option value="basico">Básico — já mexi em alguma DAW</option>
-          <option value="intermediario">Intermediário — produzo há mais de 1 ano</option>
-          <option value="profissional">Profissional — quero refinar técnica</option>
+          <option value="iniciante">Quero começar do zero</option>
+          <option value="basico">Já mexi em alguma DAW mas não evoluo</option>
+          <option value="intermediario">Produzo há mais de 1 ano, quero profissionalizar</option>
+          <option value="profissional">Já lanço música, quero refinar técnica</option>
         </select>
       </div>
 
       <button type="submit" class="btn">
-        Quero meu acesso <span class="arrow">→</span>
+        Quero conversar com a Waves <span class="arrow">→</span>
       </button>
       <p class="form-foot">Seus dados ficam só com a Waves. Sem spam.</p>
     </form>
@@ -845,9 +954,9 @@ footer span{color:var(--brand)}
 <!-- FINAL -->
 <section class="final">
   <div class="wrap final-content">
-    <h2 class="final-title reveal">Música boa não nasce de <em>sorte</em>.<br>Nasce de <em>método</em>.</h2>
+    <h2 class="final-title reveal">A próxima faixa<br><em>finalizada</em> pode ser a sua.</h2>
     <a href="#cadastro" class="reveal d1" onclick="setTimeout(()=>document.getElementById('nome').focus(),700)">
-      Quero entrar para a Waves <span class="arrow">→</span>
+      Conversar com a Waves <span class="arrow">→</span>
     </a>
   </div>
 </section>
@@ -915,16 +1024,16 @@ document.getElementById('lead-form').addEventListener('submit', function(e){
   }
   if(typeof fbq === 'function'){
     fbq('track', 'Lead', {
-      content_name: 'LP_Curso_Gravado_v2',
-      content_category: 'curso_gravado'
+      content_name: 'LP_Producao_Musical',
+      content_category: 'curso_producao'
     });
   }
   const msg = encodeURIComponent(
     `Olá! Acabei de me cadastrar no site da Waves.\n\n` +
     `Nome: ${data.nome}\n` +
     `E-mail: ${data.email}\n` +
-    `Nível: ${data.exp}\n\n` +
-    `Quero saber mais sobre o curso completo!\n` +
+    `Momento atual: ${data.exp}\n\n` +
+    `Quero saber mais sobre o Curso de Produção Musical!\n` +
     `(origem: ${data.campaign} / ${data.content})`
   );
   window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
