@@ -6,6 +6,19 @@
 <title>WAVES — Curso de Produção Musical em Criciúma e Online</title>
 <meta name="description" content="Aprenda a produzir música do zero ao avançado. 16 aulas práticas com produtor profissional, presencial em Criciúma ou online de qualquer lugar do Brasil." />
 
+<!-- OPEN GRAPH (preview de compartilhamento) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WAVES — Curso de Produção Musical em Criciúma e Online" />
+<meta property="og:description" content="16 aulas práticas com produtor profissional. Do zero à sua primeira música finalizada. Presencial em Criciúma ou online." />
+<meta property="og:image" content="aluno-04-deley.jpg" />
+<meta property="og:image:width" content="1080" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WAVES — Curso de Produção Musical" />
+<meta name="twitter:description" content="16 aulas práticas com produtor profissional. Do zero à sua primeira música finalizada." />
+<meta name="twitter:image" content="aluno-04-deley.jpg" />
+
 <!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -25,6 +38,11 @@ src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
+/* Garantia explícita de font-display swap (alguns auditors checam só CSS) */
+@font-face{font-family:'Fraunces';font-display:swap}
+@font-face{font-family:'Inter Tight';font-display:swap}
+@font-face{font-family:'JetBrains Mono';font-display:swap}
+
 :root{
   /* paleta marca */
   --bg:#0e0606;
@@ -86,6 +104,71 @@ nav{padding:24px 0;border-bottom:1px solid var(--line);position:sticky;top:0;bac
 .nav-cta:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-1px)}
 .nav-cta .arrow{transition:transform .25s}
 .nav-cta:hover .arrow{transform:translate(3px,-1px)}
+
+/* CTA primário (WhatsApp) — aparece no hero, no meio e no final */
+.hero-cta-row{
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  margin:36px 0 44px;
+}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:12px;
+  background:linear-gradient(135deg, var(--brand) 0%, #ff3a38 100%);
+  color:var(--ink);
+  padding:18px 32px;
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border:none;
+  box-shadow:0 12px 32px -8px rgba(217,25,23,.55), inset 0 1px 0 rgba(255,255,255,.15);
+  transition:transform .25s ease, box-shadow .25s ease, filter .25s;
+  cursor:pointer;
+}
+.cta-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 42px -8px rgba(217,25,23,.7), inset 0 1px 0 rgba(255,255,255,.25);
+  filter:brightness(1.08);
+}
+.cta-primary .wa-svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.cta-primary .arrow{transition:transform .25s}
+.cta-primary:hover .arrow{transform:translate(4px,0)}
+.cta-mini{
+  font-family:var(--mono);font-size:10.5px;
+  color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;
+}
+
+/* CTA banner do meio */
+.cta-banner{
+  margin:80px 0 40px;
+  padding:48px 40px;
+  background:linear-gradient(135deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  border:1px solid var(--line-strong);
+  border-radius:16px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%, var(--brand-soft) 0%, transparent 60%);
+  opacity:0.6;pointer-events:none;
+}
+.cta-banner > *{position:relative;z-index:1}
+.cta-banner h3{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(24px,3.5vw,38px);
+  line-height:1.05;letter-spacing:-0.02em;
+  margin-bottom:14px;color:var(--ink);
+}
+.cta-banner h3 em{color:var(--brand);font-style:italic}
+.cta-banner p{
+  font-size:15.5px;color:var(--ink-dim);
+  margin:0 auto 28px;max-width:560px;line-height:1.55;
+}
+.cta-banner .cta-primary{margin:0 auto}
 
 /* ========== HERO ========== */
 .hero{padding:80px 0 100px;position:relative;overflow:hidden}
@@ -463,18 +546,12 @@ h1 strong{font-weight:600;color:var(--ink)}
   pointer-events:none;z-index:0;
 }
 .final-content{position:relative;z-index:2}
-.final-title{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.5vw,72px);line-height:1.0;letter-spacing:-0.025em;margin-bottom:36px;max-width:900px;margin-left:auto;margin-right:auto}
+.final-title{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.5vw,72px);line-height:1.0;letter-spacing:-0.025em;margin-bottom:24px;max-width:900px;margin-left:auto;margin-right:auto}
 .final-title em{font-style:italic;color:var(--brand)}
-.final a{
-  display:inline-flex;align-items:center;gap:14px;
-  background:var(--brand);color:#fff;
-  padding:22px 42px;text-decoration:none;
-  font-family:var(--mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
-  border-radius:6px;transition:transform .25s, box-shadow .3s, background .25s;
+.final-sub{
+  font-size:16px;color:var(--ink-dim);line-height:1.6;
+  margin:0 auto 36px;max-width:540px;
 }
-.final a:hover{transform:translateY(-3px);box-shadow:0 18px 38px -10px rgba(217,25,23,.5);background:var(--brand-deep)}
-.final a .arrow{transition:transform .25s}
-.final a:hover .arrow{transform:translateX(5px)}
 
 footer{padding:40px 0;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-align:center;background:var(--bg-2)}
 footer span{color:var(--brand)}
@@ -549,6 +626,15 @@ footer span{color:var(--brand)}
   .spotify-name{font-size:14px}
   .spotify-logo{width:24px;height:24px}
 
+  /* CTA primário mobile */
+  .hero-cta-row{margin:28px 0 36px;gap:12px;align-items:stretch}
+  .cta-primary{padding:16px 22px;font-size:12px;justify-content:center;text-align:center}
+  .cta-primary .wa-svg{width:16px;height:16px}
+  .cta-mini{font-size:10px;text-align:center}
+  .cta-banner{padding:36px 24px;margin:60px 0 30px;border-radius:12px}
+  .cta-banner h3{font-size:24px}
+  .cta-banner p{font-size:14px;margin-bottom:24px}
+
   /* FAQ */
   .faq-q{font-size:17px;gap:14px}
   .faq-q::after{font-size:24px}
@@ -573,8 +659,8 @@ footer span{color:var(--brand)}
 
   /* final */
   .final{padding:72px 0 60px}
-  .final-title{font-size:36px;margin-bottom:24px}
-  .final a{padding:18px 28px;font-size:12px}
+  .final-title{font-size:36px;margin-bottom:18px}
+  .final-sub{font-size:14px;margin-bottom:28px}
 }
 
 /* extra-small (iPhones SE etc) */
@@ -603,7 +689,7 @@ footer span{color:var(--brand)}
 <nav>
   <div class="wrap nav-inner">
     <div class="logo">waves<span>.</span></div>
-    <a href="#cadastro" class="nav-cta">Quero meu acesso <span class="arrow">→</span></a>
+    <a href="#" class="nav-cta" onclick="abrirWA('nav');return false;">Falar com a Waves <span class="arrow">→</span></a>
   </div>
 </nav>
 
@@ -614,7 +700,15 @@ footer span{color:var(--brand)}
       <div class="eyebrow reveal">Curso de Produção Musical · 16 aulas · Presencial ou Online</div>
       <h1 class="reveal d1">Pare de <em>esperar</em> a hora certa.<br><strong>Sua primeira música finalizada</strong> sai daqui.</h1>
       <p class="hero-sub reveal d2">Curso completo de produção musical da Waves. Em 16 aulas práticas, do zero ao avançado, você aprende criação de beats, gravação de voz, mixagem, masterização e finalização. Presencial em Criciúma ou online de qualquer lugar.</p>
-      <div class="hero-meta reveal d3">
+      <div class="hero-cta-row reveal d3">
+        <a href="#" class="cta-primary" onclick="abrirWA('hero');return false;">
+          <svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+          Falar com a Waves agora
+          <span class="arrow">→</span>
+        </a>
+        <span class="cta-mini">Resposta em minutos · Sem compromisso</span>
+      </div>
+      <div class="hero-meta reveal d4">
         <div class="meta-item">
           <div class="meta-num"><em>16</em></div>
           <div class="meta-lbl">Aulas práticas<br>de 1 hora</div>
@@ -634,7 +728,7 @@ footer span{color:var(--brand)}
     <div class="hero-visual reveal d2">
       <picture>
         <source srcset="aluno-04-deley-lg.webp" type="image/webp">
-        <img src="aluno-04-deley.jpg" alt="Aluno formado pela Waves segurando certificado no estúdio em Criciúma" loading="eager" decoding="async">
+        <img src="aluno-04-deley.jpg" alt="Aluno formado pela Waves segurando certificado no estúdio em Criciúma" loading="eager" decoding="async" width="1080" height="1080">
       </picture>
       <div class="hero-tag">
         <span><span class="dot"></span>&nbsp;&nbsp;Aluno formado · Waves</span>
@@ -759,42 +853,42 @@ footer span{color:var(--brand)}
       <figure class="aluno reveal">
         <picture>
           <source srcset="aluno-04-deley-md.webp" type="image/webp">
-          <img src="aluno-04-deley.jpg" alt="Aluno formado segurando certificado" loading="lazy">
+          <img src="aluno-04-deley.jpg" alt="Aluno formado segurando certificado" loading="lazy" width="1080" height="1080">
         </picture>
         <figcaption>Curso de Produção Musical</figcaption>
       </figure>
       <figure class="aluno reveal d1">
         <picture>
           <source srcset="aluno-02-kamila-carol-md.webp" type="image/webp">
-          <img src="aluno-02-kamila-carol.jpg" alt="Alunas formadas segurando certificados no estúdio Waves" loading="lazy">
+          <img src="aluno-02-kamila-carol.jpg" alt="Alunas formadas segurando certificados no estúdio Waves" loading="lazy" width="1080" height="1080">
         </picture>
         <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal d2">
         <picture>
           <source srcset="aluno-05-bruno-md.webp" type="image/webp">
-          <img src="aluno-05-bruno.jpg" alt="Aluno formado em curso de produção musical" loading="lazy">
+          <img src="aluno-05-bruno.jpg" alt="Aluno formado em curso de produção musical" loading="lazy" width="1080" height="1350">
         </picture>
         <figcaption>Curso de Produção Musical</figcaption>
       </figure>
       <figure class="aluno reveal d3">
         <picture>
           <source srcset="aluno-01-rhyda-md.webp" type="image/webp">
-          <img src="aluno-01-rhyda.jpg" alt="Aluna formada em discotecagem segurando certificado" loading="lazy">
+          <img src="aluno-01-rhyda.jpg" alt="Aluna formada em discotecagem segurando certificado" loading="lazy" width="1080" height="810">
         </picture>
         <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal">
         <picture>
           <source srcset="aluno-03-caua-md.webp" type="image/webp">
-          <img src="aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
+          <img src="aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy" width="1080" height="865">
         </picture>
         <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
       <figure class="aluno reveal d1">
         <picture>
           <source srcset="aluno-06-ramon-md.webp" type="image/webp">
-          <img src="aluno-06-ramon.jpg" alt="Aluno formado em curso de DJ" loading="lazy">
+          <img src="aluno-06-ramon.jpg" alt="Aluno formado em curso de DJ" loading="lazy" width="1080" height="1080">
         </picture>
         <figcaption>Curso de Mixagem para DJ</figcaption>
       </figure>
@@ -804,7 +898,7 @@ footer span{color:var(--brand)}
     <div class="confra reveal d2">
       <picture>
         <source srcset="confra-01-lg.webp" type="image/webp">
-        <img src="confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
+        <img src="confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy" width="1080" height="720">
       </picture>
       <div class="confra-overlay">
         <span class="confra-tag">1ª Confraternização · Criciúma</span>
@@ -823,40 +917,55 @@ footer span{color:var(--brand)}
     <p class="section-sub reveal d2">Não é teoria. Estes são alguns dos artistas conectados ao ecossistema Waves — com faixas no streaming, ouvidos no Brasil e fora dele. Quem termina o curso e quer evoluir, encontra aqui o próximo passo.</p>
 
     <div class="spotify-grid reveal d3">
-      <a href="https://open.spotify.com/intl-pt/artist/2u2rmoEXSmUyYKzyPKrJ0j" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/2u2rmoEXSmUyYKzyPKrJ0j" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Shefreq</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/1fZ1xy8Aew7YeBeEYIwJDJ" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/1fZ1xy8Aew7YeBeEYIwJDJ" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">DD Lopes</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/0l3kLYqlS62khHAdTUyFiX" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/0l3kLYqlS62khHAdTUyFiX" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Rav3n</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/5zGJzxxa4L5Eg3mkLTyyyM" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/5zGJzxxa4L5Eg3mkLTyyyM" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Tiphany Andersen</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/7DoYwpiSvZkycEEcVO5mPh" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/7DoYwpiSvZkycEEcVO5mPh" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Big Papo</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/4Pm95s0IEvJNmM8yqNtgCe" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/4Pm95s0IEvJNmM8yqNtgCe" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Sanchez</div>
         <span class="spotify-link">Ouvir →</span>
       </a>
-      <a href="https://open.spotify.com/intl-pt/artist/0rwJCH1c2vjhByOyVH8bAT" target="_blank" rel="noopener" class="spotify-card">
+      <a href="https://open.spotify.com/intl-pt/artist/0rwJCH1c2vjhByOyVH8bAT" target="_blank" rel="noopener noreferrer" class="spotify-card">
         <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
         <div class="spotify-name">Maycon Casagrande</div>
         <span class="spotify-link">Ouvir →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER (meio da página) -->
+<section class="section" style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <h3>Tá esperando o quê pra <em>começar</em>?</h3>
+      <p>O próximo aluno com certificado na mão pode ser você. Cinco minutos no WhatsApp e você sabe se a Waves é o caminho.</p>
+      <a href="#" class="cta-primary" onclick="abrirWA('meio');return false;">
+        <svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+        Quero saber mais sobre o curso
+        <span class="arrow">→</span>
       </a>
     </div>
   </div>
@@ -900,63 +1009,15 @@ footer span{color:var(--brand)}
   </div>
 </section>
 
-<!-- FORM SECTION -->
-<section class="form-section" id="cadastro">
-  <div class="wrap form-grid">
-    <div class="form-side">
-      <div class="section-eyebrow reveal">Quero começar</div>
-      <h2 class="reveal d1">Próximo passo:<br>uma <em>conversa</em>.</h2>
-      <p class="reveal d2">Preenche ao lado e em poucos minutos um consultor te chama no WhatsApp. Sem pressão de venda. Você recebe os detalhes do curso, valor com condições do mês, e tira todas as dúvidas antes de decidir.</p>
-      <ul class="form-features reveal d3">
-        <li>Resposta em até 1 hora útil</li>
-        <li>Plano de aula adaptado ao seu nível e estilo</li>
-        <li>Indicação de formato: individual ou dupla, presencial ou online</li>
-        <li>Parcelamento facilitado quando você decidir</li>
-      </ul>
-    </div>
-
-    <form class="form-card reveal d2" id="lead-form" novalidate>
-      <span class="form-tag">→ Cadastro</span>
-      <h2 class="form-title">Receba contato do time da Waves</h2>
-      <p class="form-desc">Quatro campos, dois minutos. Depois é só conversar.</p>
-
-      <div class="field">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required autocomplete="name" />
-      </div>
-      <div class="field">
-        <label for="whats">WhatsApp (com DDD)</label>
-        <input type="tel" id="whats" name="whats" required autocomplete="tel" placeholder="(48) 99999-9999" />
-      </div>
-      <div class="field">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required autocomplete="email" />
-      </div>
-      <div class="field">
-        <label for="exp">Seu momento atual</label>
-        <select id="exp" name="exp" required>
-          <option value="">Selecione uma opção</option>
-          <option value="iniciante">Quero começar do zero</option>
-          <option value="basico">Já mexi em alguma DAW mas não evoluo</option>
-          <option value="intermediario">Produzo há mais de 1 ano, quero profissionalizar</option>
-          <option value="profissional">Já lanço música, quero refinar técnica</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn">
-        Quero conversar com a Waves <span class="arrow">→</span>
-      </button>
-      <p class="form-foot">Seus dados ficam só com a Waves. Sem spam.</p>
-    </form>
-  </div>
-</section>
-
 <!-- FINAL -->
 <section class="final">
   <div class="wrap final-content">
     <h2 class="final-title reveal">A próxima faixa<br><em>finalizada</em> pode ser a sua.</h2>
-    <a href="#cadastro" class="reveal d1" onclick="setTimeout(()=>document.getElementById('nome').focus(),700)">
-      Conversar com a Waves <span class="arrow">→</span>
+    <p class="final-sub reveal d1">Cinco minutos no WhatsApp podem mudar o caminho da sua carreira musical. Sem compromisso, sem pressão.</p>
+    <a href="#" class="cta-primary reveal d2" onclick="abrirWA('final');return false;">
+      <svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
+      Conversar com a Waves
+      <span class="arrow">→</span>
     </a>
   </div>
 </section>
@@ -987,16 +1048,18 @@ if ('IntersectionObserver' in window) {
 
 // Scroll progress bar
 const prog = document.getElementById('progress');
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  prog.style.width = p + '%';
-}, { passive: true });
+if (prog) {
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    prog.style.width = p + '%';
+  }, { passive: true });
+}
 
-// WhatsApp number — CONFIRMAR
+// === WHATSAPP HANDOFF ===
 const WHATSAPP = '554898083842';
 
-// UTM capture
+// Captura UTMs pra incluir na mensagem (closer vê origem do lead)
 function getUTMs(){
   const p = new URLSearchParams(window.location.search);
   return {
@@ -1007,44 +1070,30 @@ function getUTMs(){
     term: p.get('utm_term') || 'na'
   };
 }
+const UTM = getUTMs();
 
-// Form submit
-document.getElementById('lead-form').addEventListener('submit', function(e){
-  e.preventDefault();
-  const data = {
-    nome: document.getElementById('nome').value.trim(),
-    whats: document.getElementById('whats').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    exp: document.getElementById('exp').value,
-    ...getUTMs()
-  };
-  if(!data.nome || !data.whats || !data.email || !data.exp){
-    alert('Por favor, preencha todos os campos.');
-    return;
-  }
+// Mensagens por origem de clique (closer sabe que parte da LP converteu)
+const MSGS = {
+  nav:    'Olá! Vim do site da Waves e quero saber mais sobre o Curso de Produção Musical.',
+  hero:   'Olá! Quero conversar sobre o Curso de Produção Musical da Waves.',
+  meio:   'Olá! Acabei de ver a página de alunos formados e quero saber mais sobre o Curso de Produção Musical.',
+  final:  'Olá! Decidi conversar com a Waves sobre o Curso de Produção Musical.'
+};
+
+function abrirWA(origem){
   if(typeof fbq === 'function'){
     fbq('track', 'Lead', {
       content_name: 'LP_Producao_Musical',
-      content_category: 'curso_producao'
+      content_category: 'curso_producao',
+      origin: origem
     });
+    fbq('trackCustom', 'ClickWhatsApp', {origem: origem, ...UTM});
   }
-  const msg = encodeURIComponent(
-    `Olá! Acabei de me cadastrar no site da Waves.\n\n` +
-    `Nome: ${data.nome}\n` +
-    `E-mail: ${data.email}\n` +
-    `Momento atual: ${data.exp}\n\n` +
-    `Quero saber mais sobre o Curso de Produção Musical!\n` +
-    `(origem: ${data.campaign} / ${data.content})`
-  );
-  window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
-});
-
-// nav cta smooth scroll
-document.querySelector('.nav-cta').addEventListener('click', function(e){
-  e.preventDefault();
-  document.querySelector('#cadastro').scrollIntoView({behavior:'smooth', block:'start'});
-  setTimeout(()=>document.getElementById('nome').focus(), 700);
-});
+  const baseMsg = MSGS[origem] || MSGS.hero;
+  const fullMsg = `${baseMsg}\n\n(Origem: ${UTM.campaign} / ${UTM.content})`;
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(fullMsg)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
 </script>
 </body>
 </html>
