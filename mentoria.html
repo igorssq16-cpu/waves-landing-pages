@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>WAVES — Mentoria de Produção Musical e DJ</title>
-<meta name="description" content="Aulas individuais ou em dupla, presencial em Criciúma ou online de qualquer lugar do Brasil. Mentoria 1 a 1 com produtor profissional." />
+<title>WAVES — Curso de Mixagem para DJ em Criciúma e Online</title>
+<meta name="description" content="Forme-se DJ com método e estúdio profissional. 16 aulas práticas: mixagem, transições, leitura de pista, setlist e performance ao vivo. Presencial em Criciúma ou online." />
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WAVES — Curso de Mixagem para DJ em Criciúma e Online" />
+<meta property="og:description" content="Forme-se DJ com método e estúdio profissional. 16 aulas práticas: mixagem, transições, leitura de pista, performance ao vivo." />
+<meta property="og:image" content="confra-01.jpg" />
+<meta property="og:image:width" content="1080" />
+<meta property="og:image:height" content="720" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WAVES — Curso de Mixagem para DJ" />
+<meta name="twitter:description" content="16 aulas práticas com produtor profissional. Sai do quarto, entra na pista." />
+<meta name="twitter:image" content="confra-01.jpg" />
 
 <!-- META PIXEL -->
 <script>
@@ -15,7 +28,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1745629623514914');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name: 'LP_Mentoria_v2', content_category: 'mentoria'});
+fbq('track', 'ViewContent', {content_name: 'LP_Mixagem_DJ', content_category: 'curso_dj'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></noscript>
@@ -25,6 +38,11 @@ src="https://www.facebook.com/tr?id=1745629623514914&ev=PageView&noscript=1"/></
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 
 <style>
+/* Garantia explícita de font-display swap */
+@font-face{font-family:'Bricolage Grotesque';font-display:swap}
+@font-face{font-family:'DM Sans';font-display:swap}
+@font-face{font-family:'DM Mono';font-display:swap}
+
 :root{
   /* paleta marca */
   --bg:#0e0606;
@@ -300,6 +318,54 @@ h1 .strike{
 @media(max-width:640px){
   .confra-block-overlay p{font-size:14px;line-height:1.5}
 }
+
+/* SPOTIFY SECTION */
+.spotify-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:12px;
+}
+@media(max-width:900px){.spotify-grid{grid-template-columns:repeat(2, 1fr)}}
+@media(max-width:480px){.spotify-grid{grid-template-columns:1fr}}
+.spotify-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px 18px;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--ink);
+  transition:transform .25s ease, border-color .25s, background .25s;
+  position:relative;
+}
+.spotify-card:hover{
+  transform:translateY(-3px);
+  border-color:#1ed760;
+  background:#100a0a;
+}
+.spotify-logo{
+  width:28px;height:28px;flex-shrink:0;display:block;
+}
+.spotify-name{
+  flex:1;
+  font-size:14.5px;
+  font-weight:500;
+  color:var(--ink);
+}
+.spotify-link{
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--ink-mute);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .25s, transform .25s;
+}
+.spotify-card:hover .spotify-link{
+  color:#1ed760;
+  transform:translateX(3px);
+}
 .why-card{
   background:var(--bg-2);
   border:1px solid var(--line);
@@ -444,6 +510,11 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
   /* botão flutuante: menor e mais discreto em mobile */
   .float-wa{width:54px;height:54px;bottom:18px;right:18px}
   .float-wa svg{width:26px;height:26px}
+
+  /* spotify mobile */
+  .spotify-card{padding:14px 16px;gap:12px;border-radius:10px}
+  .spotify-name{font-size:14px}
+  .spotify-logo{width:24px;height:24px}
 }
 
 /* extra-small */
@@ -530,12 +601,12 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
   </div>
 
   <div class="wrap" style="position:relative;z-index:3">
-    <div class="hero-mark reveal">Mentoria 1 a 1 · Presencial em Criciúma ou Online</div>
+    <div class="hero-mark reveal">Curso de Mixagem para DJ · 16 aulas · Presencial em Criciúma ou Online</div>
     <h1 class="reveal d1">
-      Pare de <span class="strike">tentar sozinho.</span><br>
-      Comece com <span class="pop">mentor.</span>
+      Sai do <span class="strike">quarto.</span><br>
+      Entra na <span class="pop">pista.</span>
     </h1>
-    <p class="hero-sub reveal d2">Aulas individuais ou em dupla com produtor profissional. No estúdio em Criciúma ou online de qualquer lugar do Brasil. O caminho mais curto entre onde você está hoje e a sua música rodando.</p>
+    <p class="hero-sub reveal d2">Formação completa para começar ou evoluir como DJ. Em 16 aulas práticas, do zero ao palco: mixagem, transições, leitura de pista, setlist, equipamentos e performance ao vivo. Estúdio profissional em Criciúma ou online.</p>
     <div class="hero-cta-wrap reveal d3">
       <a href="#" class="cta-big" onclick="abrirWA('hero');return false;">
         <svg class="wa-icon" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
@@ -547,16 +618,16 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
 
     <div class="hero-stats reveal d4">
       <div class="hero-stat">
-        <div class="hero-stat-num"><span class="pop">24</span></div>
-        <div class="hero-stat-lbl">Aulas no programa</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num"><span class="pop">6</span></div>
-        <div class="hero-stat-lbl">Países com alunos</div>
+        <div class="hero-stat-num"><span class="pop">16</span></div>
+        <div class="hero-stat-lbl">Aulas práticas<br>de 1 hora</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num"><span class="pop">1:1</span></div>
-        <div class="hero-stat-lbl">Mentoria direta</div>
+        <div class="hero-stat-lbl">Individual<br>ou em dupla</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="pop">SC</span></div>
+        <div class="hero-stat-lbl">Estúdio em<br>Criciúma</div>
       </div>
     </div>
   </div>
@@ -566,32 +637,32 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
 <section class="section">
   <div class="wrap">
     <div class="section-eyebrow reveal">A diferença real</div>
-    <h2 class="section-title reveal d1">Curso online qualquer um faz.<br>Mentoria <span class="pop">muda</span> o jogo.</h2>
-    <p class="section-sub reveal d2">Quem aprende sozinho leva cinco anos para descobrir o que um mentor corrige em cinco minutos. A diferença entre os dois caminhos não é sutil:</p>
+    <h2 class="section-title reveal d1">Qualquer um aperta play.<br><span class="pop">DJ profissional</span> faz a pista virar.</h2>
+    <p class="section-sub reveal d2">A diferença entre quem fica no quarto e quem entra na pista não é equipamento. É método. Veja como o caminho muda:</p>
 
     <div class="compare">
       <div class="compare-col bad reveal">
         <span class="compare-tag">Aprendendo sozinho</span>
-        <h3>YouTube, fórum,<br>tentativa e erro.</h3>
+        <h3>Tutorial,<br>tentativa e erro.</h3>
         <ul class="compare-list">
-          <li>Conteúdo solto, sem sequência lógica</li>
-          <li>Ninguém escuta sua música e diz o que está errado</li>
-          <li>Você repete os mesmos erros sem perceber</li>
-          <li>Pode levar anos para sair do nível básico</li>
-          <li>Sem rede, sem indicação, sem comunidade</li>
-          <li>Lançamento que nunca chega</li>
+          <li>Você mixa, mas não sabe explicar por que funcionou</li>
+          <li>Transição que parece boa em casa não funciona em festa</li>
+          <li>Nunca sabe se a setlist está montada para aquela pista</li>
+          <li>Sem feedback profissional, vícios técnicos só pioram</li>
+          <li>Equipamento profissional intimida quando você se depara</li>
+          <li>Convite pra tocar não vem — ou vem e você trava</li>
         </ul>
       </div>
       <div class="compare-col good reveal d1">
-        <span class="compare-tag">Mentoria Waves</span>
-        <h3>Mentor profissional,<br>plano sob medida.</h3>
+        <span class="compare-tag">Curso de Mixagem Waves</span>
+        <h3>Estúdio profissional,<br>método estruturado.</h3>
         <ul class="compare-list">
-          <li>Trilha estruturada do zero ao master final</li>
-          <li>Feedback direto e específico em cada aula</li>
-          <li>Correção de vícios técnicos antes deles travarem você</li>
-          <li>Resultado em meses, não em anos</li>
-          <li>Rede Waves: alunos, parcerias, indicações reais</li>
-          <li>Sua música pronta para lançamento ao final</li>
+          <li>Mixagem com técnica e equipamento real (CDJs, mixer)</li>
+          <li>Transições, leitura de pista e construção de setlist</li>
+          <li>Performance ao vivo praticada antes do palco real</li>
+          <li>Feedback profissional na hora, em cada decisão</li>
+          <li>Identidade artística construída desde a primeira aula</li>
+          <li>Você sai pronto para tocar com presença e segurança</li>
         </ul>
       </div>
     </div>
@@ -602,31 +673,31 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="section-eyebrow reveal">Escolha o formato</div>
-    <h2 class="section-title reveal d1">Dois caminhos.<br>Um <span class="pop">objetivo.</span></h2>
+    <h2 class="section-title reveal d1">Dois formatos.<br>O mesmo <span class="pop">método.</span></h2>
 
     <div class="formats">
       <div class="format-card reveal">
         <span class="num">↳ Formato 01</span>
         <h3>Individual</h3>
-        <p class="sub">24 aulas de 1h · Presencial em Criciúma ou online</p>
+        <p class="sub">16 aulas de 1h · Presencial em Criciúma ou online</p>
         <ul class="format-features">
-          <li>Mentoria 100% personalizada</li>
-          <li>Ritmo definido por você</li>
-          <li>Foco total no seu estilo musical</li>
+          <li>Programa 100% personalizado pro seu estilo</li>
+          <li>Ritmo de aulas definido por você</li>
+          <li>Foco total na sua identidade artística</li>
           <li>Plano de aula adaptado mês a mês</li>
-          <li>Acesso direto ao mentor entre as aulas</li>
+          <li>Atenção integral do produtor</li>
         </ul>
         <a href="#" class="format-cta" onclick="abrirWA('individual');return false;">Quero o individual →</a>
       </div>
       <div class="format-card reveal d1">
         <span class="num">↳ Formato 02</span>
         <h3>Dupla</h3>
-        <p class="sub">24 aulas de 1h · Presencial em Criciúma ou online</p>
+        <p class="sub">16 aulas de 1h · Presencial em Criciúma ou online</p>
         <ul class="format-features">
           <li>Mesmo programa, com colega de jornada</li>
+          <li>Investimento dividido entre os dois</li>
           <li>Aprendizado mais dinâmico e provocativo</li>
-          <li>Investimento dividido</li>
-          <li>Trocas e parcerias musicais reais</li>
+          <li>Treina batalha de set e mixagem em par</li>
           <li>Ideal para amigos com objetivos próximos</li>
         </ul>
         <a href="#" class="format-cta" onclick="abrirWA('dupla');return false;">Quero a dupla →</a>
@@ -639,35 +710,35 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="section-eyebrow reveal">Como começa</div>
-    <h2 class="section-title reveal d1">Quatro passos<br>até a <span class="pop">primeira aula.</span></h2>
+    <h2 class="section-title reveal d1">Quatro passos<br>até <span class="pop">tocar.</span></h2>
 
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">01</div>
         <div>
           <h3>Conversa inicial</h3>
-          <p>Você chama no WhatsApp, conta seu momento atual e seu objetivo. O time da Waves entende onde você está e onde quer chegar — sem pressão de venda.</p>
+          <p>Você chama no WhatsApp, conta seu momento atual e onde quer chegar — começar do zero, evoluir, viver de DJ. O time entende o ponto de partida e tira dúvidas. Sem pressão de venda.</p>
         </div>
       </div>
       <div class="step reveal d1">
         <div class="step-num">02</div>
         <div>
-          <h3>Recomendação de formato</h3>
-          <p>A gente indica individual ou dupla, presencial ou online, baseado na sua disponibilidade, localização e estilo de aprendizado. Sem encaixar você no que sobrou.</p>
+          <h3>Indicação de formato</h3>
+          <p>A gente indica individual ou dupla, presencial em Criciúma ou online, baseado na sua disponibilidade, distância e estilo de aprendizado. Sem encaixar você no que sobrou.</p>
         </div>
       </div>
       <div class="step reveal d2">
         <div class="step-num">03</div>
         <div>
-          <h3>Plano de mentoria personalizado</h3>
-          <p>Antes da primeira aula, montamos um plano com os marcos das 24 sessões — adaptado ao seu nível, ao seu estilo musical e aos seus objetivos de carreira.</p>
+          <h3>Plano de aula personalizado</h3>
+          <p>Antes da primeira aula, montamos o programa das 16 sessões adaptado ao seu nível, estilo musical (eletrônica, funk, mega funk, sertanejo) e objetivo de carreira.</p>
         </div>
       </div>
       <div class="step reveal d3">
         <div class="step-num">04</div>
         <div>
-          <h3>Sua primeira sessão</h3>
-          <p>Começa a mentoria com mentor profissional, com objetivos claros e plano definido. Em poucas semanas, a diferença na sua produção já é audível.</p>
+          <h3>Primeira sessão</h3>
+          <p>Começa o curso com produtor profissional, no estúdio com CDJs e mixer reais (ou online com tela compartilhada). Em poucas semanas, a diferença na sua mixagem já é audível.</p>
         </div>
       </div>
     </div>
@@ -684,26 +755,26 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
     <div class="alunos-row">
       <figure class="aluno-card reveal">
         <picture>
-          <source srcset="img/aluno-04-deley-md.webp" type="image/webp">
-          <img src="img/aluno-04-deley.jpg" alt="Aluno formado pela Waves com certificado" loading="lazy">
+          <source srcset="aluno-04-deley-md.webp" type="image/webp">
+          <img src="aluno-04-deley.jpg" alt="Aluno formado pela Waves com certificado" loading="lazy" width="1080" height="1080">
         </picture>
       </figure>
       <figure class="aluno-card reveal d1">
         <picture>
-          <source srcset="img/aluno-02-kamila-carol-md.webp" type="image/webp">
-          <img src="img/aluno-02-kamila-carol.jpg" alt="Alunas formadas no estúdio Waves Criciúma" loading="lazy">
+          <source srcset="aluno-02-kamila-carol-md.webp" type="image/webp">
+          <img src="aluno-02-kamila-carol.jpg" alt="Alunas formadas no estúdio Waves Criciúma" loading="lazy" width="1080" height="1080">
         </picture>
       </figure>
       <figure class="aluno-card reveal d2">
         <picture>
-          <source srcset="img/aluno-03-caua-md.webp" type="image/webp">
-          <img src="img/aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy">
+          <source srcset="aluno-03-caua-md.webp" type="image/webp">
+          <img src="aluno-03-caua.jpg" alt="Aluno formado em especialização" loading="lazy" width="1080" height="865">
         </picture>
       </figure>
       <figure class="aluno-card reveal d3">
         <picture>
-          <source srcset="img/aluno-05-bruno-md.webp" type="image/webp">
-          <img src="img/aluno-05-bruno.jpg" alt="Aluno formado em produção musical" loading="lazy">
+          <source srcset="aluno-05-bruno-md.webp" type="image/webp">
+          <img src="aluno-05-bruno.jpg" alt="Aluno formado em produção musical" loading="lazy" width="1080" height="1350">
         </picture>
       </figure>
     </div>
@@ -715,14 +786,61 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
   <div class="wrap">
     <div class="confra-block reveal">
       <picture>
-        <source srcset="img/confra-01-lg.webp" type="image/webp">
-        <img src="img/confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy">
+        <source srcset="confra-01-lg.webp" type="image/webp">
+        <img src="confra-01.jpg" alt="Confraternização dos alunos da Waves em Criciúma" loading="lazy" width="1080" height="720">
       </picture>
       <div class="confra-block-overlay">
         <span class="confra-block-tag">1ª Confraternização · Criciúma</span>
-        <h3>Você não vira DJ <span class="pop">sozinho</span>.</h3>
-        <p>A Waves não termina quando o curso acaba. A rede de alunos formados continua junta — toca em evento de outro aluno, fecha parceria, vira artista convidado. É comunidade real. É <strong>profissão</strong> sendo construída em rede.</p>
+        <h3>Não é só curso.<br>É <span class="pop">cena</span>.</h3>
+        <p>A Waves é escola, é estúdio, é rede de DJs que cresceu junto. Aluno toca em evento de outro aluno, abre festa de quem se formou antes, vira artista convidado. É <strong>profissão sendo construída em rede</strong> — não solo.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPOTIFY — artistas no streaming -->
+<section class="section spotify-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">Streaming · Spotify</div>
+    <h2 class="section-title reveal d1">Artistas com música<br><span class="pop">no ar.</span> Agora.</h2>
+    <p class="section-sub reveal d2">Alguns dos artistas conectados ao ecossistema Waves — com faixas no streaming, ouvidos no Brasil e fora dele. Pra quem termina o curso e quer ir adiante, esse é o tipo de companhia que tá esperando.</p>
+
+    <div class="spotify-grid reveal d3">
+      <a href="https://open.spotify.com/intl-pt/artist/2u2rmoEXSmUyYKzyPKrJ0j" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Shefreq</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/1fZ1xy8Aew7YeBeEYIwJDJ" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">DD Lopes</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/0l3kLYqlS62khHAdTUyFiX" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Rav3n</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/5zGJzxxa4L5Eg3mkLTyyyM" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Tiphany Andersen</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/7DoYwpiSvZkycEEcVO5mPh" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Big Papo</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/4Pm95s0IEvJNmM8yqNtgCe" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Sanchez</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/0rwJCH1c2vjhByOyVH8bAT" target="_blank" rel="noopener noreferrer" class="spotify-card">
+        <svg class="spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M17.9 10.7c-3.1-1.8-8.2-2-11.1-1.1-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.4-1 9-.8 12.6 1.3.5.3.6.9.3 1.4-.3.4-.9.5-1.3.1zm-.1 2.6c-.2.4-.7.5-1.1.3-2.6-1.6-6.5-2-9.5-1.1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.5-1.1 7.8-.6 10.8 1.2.4.2.5.7.3 1.1zm-1.2 2.5c-.2.3-.5.4-.8.2-2.2-1.4-5.1-1.7-8.4-.9-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.7-.8 6.9-.5 9.4 1.1.3.2.4.6.1.9z" fill="#0e0606"/></svg>
+        <div class="spotify-name">Maycon Casagrande</div>
+        <span class="spotify-link">Ouvir →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -734,28 +852,28 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
     <h2 class="section-title reveal d1">Perguntas <span class="pop">frequentes.</span></h2>
     <div class="faq reveal d2" style="margin-top:60px">
       <div class="faq-item">
-        <div class="faq-q">Preciso ter experiência prévia?</div>
-        <div class="faq-a">Não. A mentoria começa exatamente do seu nível atual — seja zero absoluto ou produtor experiente buscando refinamento. O plano é desenhado depois da conversa inicial, considerando o seu ponto de partida real.</div>
+        <div class="faq-q">Preciso ter experiência prévia como DJ?</div>
+        <div class="faq-a">Não. O curso começa do zero: equipamento, BPM, beatmatch, primeira mixagem. Se você nunca tocou em CDJ ou controlador, vai aprender desde o começo. Se já é DJ amador, usa as primeiras aulas para corrigir vícios técnicos e foca em construção de set, leitura de pista e performance.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quantas aulas tem o curso e quanto tempo dura?</div>
+        <div class="faq-a">São 16 aulas de 1 hora, geralmente distribuídas em 3 a 5 meses dependendo do seu ritmo. A frequência (semanal, quinzenal, intensiva) é definida com o produtor logo no início.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Como funciona o formato online?</div>
-        <div class="faq-a">Aulas ao vivo em videochamada, com tela compartilhada, projeto aberto e correção em tempo real. Você fica em casa, com o seu próprio setup, e o mentor te guia em cada decisão técnica — exatamente como no presencial.</div>
+        <div class="faq-a">Aulas ao vivo em videochamada, com tela compartilhada e correção em tempo real. Você usa seu próprio equipamento ou controlador em casa, e o produtor te guia em cada decisão técnica — leitura de BPM, escolha de música, transição, montagem de set.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Onde fica o estúdio presencial?</div>
-        <div class="faq-a">Em Criciúma, Santa Catarina. Estúdio próprio com equipamento profissional disponível durante as aulas — você não precisa levar nada além de você mesmo e da vontade de produzir.</div>
+        <div class="faq-a">Em Criciúma, Santa Catarina. Estúdio próprio com CDJs e mixer profissionais disponíveis durante as aulas — você não precisa ter equipamento próprio para fazer o presencial.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Qual é o valor da mentoria?</div>
-        <div class="faq-a">O valor exato e as condições de pagamento são apresentados pelo consultor durante a conversa inicial, junto com a recomendação do melhor formato para o seu caso. Trabalhamos com parcelamento facilitado.</div>
+        <div class="faq-q">Funciona para qualquer estilo musical?</div>
+        <div class="faq-a">Sim. Os fundamentos de mixagem e performance se aplicam a qualquer estilo: eletrônica, funk, mega funk, sertanejo, pop. O programa adapta ao seu estilo no plano de aula personalizado e você sai sabendo ler pista e construir set para o público que quer tocar.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">E se eu não me adaptar ao formato escolhido?</div>
-        <div class="faq-a">Os primeiros encontros servem também para validar o ajuste. Se sentir que o formato escolhido (individual / dupla / presencial / online) não combina com você, conversamos para ajustar o plano e garantir que a mentoria entregue o que você precisa.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Quanto tempo dura o programa?</div>
-        <div class="faq-a">São 24 aulas de 1 hora, normalmente distribuídas em 4 a 6 meses, dependendo do seu ritmo. A frequência (semanal, quinzenal, intensiva) é definida com o mentor logo no início.</div>
+        <div class="faq-q">Qual o valor da formação?</div>
+        <div class="faq-a">O valor exato e as condições de pagamento são apresentados pelo consultor durante a conversa inicial, junto com a recomendação do melhor formato (individual ou dupla, presencial ou online) para o seu caso. Trabalhamos com parcelamento facilitado.</div>
       </div>
     </div>
   </div>
@@ -764,8 +882,8 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
 <!-- FINAL -->
 <section class="final">
   <div class="wrap">
-    <h2 class="final-title reveal">Sua música merece<br>mais que <span class="pop">tentativa.</span></h2>
-    <p class="final-sub reveal d1">Cinco minutos no WhatsApp podem mudar o caminho da sua carreira musical. Sem compromisso, sem pressão.</p>
+    <h2 class="final-title reveal">A próxima pista<br>tá esperando <span class="pop">você</span>.</h2>
+    <p class="final-sub reveal d1">Cinco minutos no WhatsApp podem mudar o caminho da sua carreira como DJ. Sem compromisso, sem pressão.</p>
     <a href="#" class="cta-big reveal d2" onclick="abrirWA('final');return false;">
       <svg class="wa-icon" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.85 14c-.25.7-1.44 1.34-2.02 1.42-.52.07-1.17.1-1.89-.12-.43-.14-.99-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.57.011.18.01.42-.07.66.51.25.59.83 2.06.9 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.47.13.65-.08.18-.2.74-.87.94-1.17.2-.3.4-.25.66-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.07.13.07.73-.18 1.43z"/></svg>
       Conversar com a Waves
@@ -820,19 +938,19 @@ const UTM = (() => {
 })();
 
 const MSGS = {
-  nav:        'Olá! Cheguei pelo site da Waves e quero saber mais sobre as mentorias.',
-  hero:       'Olá! Vim do site e quero conhecer a mentoria de produção musical da Waves.',
-  individual: 'Olá! Quero saber mais sobre a MENTORIA INDIVIDUAL de produção musical.',
-  dupla:      'Olá! Quero saber mais sobre a MENTORIA EM DUPLA de produção musical.',
-  final:      'Olá! Quero conversar com a Waves sobre a mentoria.',
+  nav:        'Olá! Cheguei pelo site da Waves e quero saber mais sobre o curso de mixagem para DJ.',
+  hero:       'Olá! Vim do site e quero conhecer o Curso de Mixagem para DJ da Waves.',
+  individual: 'Olá! Quero saber mais sobre o curso de DJ INDIVIDUAL.',
+  dupla:      'Olá! Quero saber mais sobre o curso de DJ EM DUPLA.',
+  final:      'Olá! Quero conversar com a Waves sobre o curso de DJ.',
   flutuante:  'Olá! Estou no site da Waves e quero falar com o time.'
 };
 
 function abrirWA(origem){
   if(typeof fbq === 'function'){
     fbq('track', 'Lead', {
-      content_name: 'LP_Mentoria_v2',
-      content_category: 'mentoria',
+      content_name: 'LP_Mixagem_DJ',
+      content_category: 'curso_dj',
       origin: origem
     });
     fbq('trackCustom', 'ClickWhatsApp', {origem: origem, ...UTM});
@@ -840,7 +958,7 @@ function abrirWA(origem){
   const baseMsg = MSGS[origem] || MSGS.hero;
   const fullMsg = `${baseMsg}\n\n(Origem: ${UTM.campaign} / ${UTM.content})`;
   const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(fullMsg)}`;
-  window.open(url, '_blank');
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 </script>
 </body>
