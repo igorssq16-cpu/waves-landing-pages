@@ -539,41 +539,6 @@ footer .pop{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webk
   .reveal{opacity:1;transform:none;transition:none}
   *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
 }
-.cookie-banner{
-  position:fixed;bottom:0;left:0;right:0;z-index:400;
-  background:rgba(26,12,12,.96);
-  border-top:1px solid rgba(241,231,230,.16);
-  padding:14px 24px;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  transform:translateY(100%);
-  transition:transform .45s cubic-bezier(.22,1,.36,1);
-}
-.cookie-banner.visible{transform:translateY(0)}
-.cookie-inner{
-  display:flex;align-items:center;gap:20px;
-  max-width:1280px;margin:0 auto;flex-wrap:wrap;
-}
-.cookie-inner p{
-  font-family:var(--mono,monospace);font-size:11px;
-  color:rgba(241,231,230,.6);letter-spacing:0.04em;line-height:1.55;
-  flex:1;min-width:260px;margin:0;
-}
-.cookie-inner a{color:var(--brand,#d91917);text-decoration:none}
-.cookie-inner a:hover{text-decoration:underline}
-.cookie-btn{
-  font-family:var(--mono,monospace);font-size:11px;letter-spacing:0.1em;
-  text-transform:uppercase;background:var(--brand,#d91917);color:#fff;
-  border:none;padding:10px 24px;border-radius:6px;cursor:pointer;
-  white-space:nowrap;transition:background .2s,transform .15s;flex-shrink:0;
-}
-.cookie-btn:hover{background:var(--brand-deep,#9f1c16);transform:translateY(-1px)}
-@media(max-width:640px){
-  .cookie-banner{padding:14px 18px}
-  .cookie-inner{gap:12px}
-  .cookie-inner p{font-size:10px}
-  .cookie-btn{width:100%;text-align:center;padding:12px}
-}
 </style>
 </head>
 <body>
@@ -954,7 +919,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // WhatsApp config
-const WHATSAPP = '5548996898825'; // Max (DJ Hobby)
+const WHATSAPP = '5548996898825';
 
 const UTM = (() => {
   const p = new URLSearchParams(window.location.search);
@@ -989,28 +954,5 @@ function abrirWA(origem){
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 </script>
-<!-- LGPD / Cookie Consent Banner -->
-<div class="cookie-banner " id="cookie-banner" role="alertdialog" aria-label="Aviso de cookies e privacidade">
-  <div class="cookie-inner">
-    <p>Este site usa cookies e tecnologias de rastreamento (incluindo Meta Pixel) para melhorar a experiência e mensurar o desempenho dos anúncios. Ao continuar, você concorda com o uso dessas tecnologias conforme nossa política de privacidade.</p>
-    <button class="cookie-btn" onclick="wavesAceitaCookies()" aria-label="Aceitar cookies">Entendi</button>
-  </div>
-</div>
-
-<script>
-// LGPD cookie consent
-function wavesAceitaCookies(){
-  try{ localStorage.setItem('waves_cookie_ok','1'); }catch(e){}
-  var b=document.getElementById('cookie-banner');
-  if(b){ b.classList.remove('visible'); }
-}
-(function(){
-  try{ if(localStorage.getItem('waves_cookie_ok')) return; }catch(e){}
-  setTimeout(function(){
-    var b=document.getElementById('cookie-banner');
-    if(b) b.classList.add('visible');
-  }, 1400);
-})();</script>
-
 </body>
 </html>
